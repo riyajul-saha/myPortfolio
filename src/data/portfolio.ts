@@ -1,7 +1,12 @@
-import farmyImg from "@/assets/project-farmy.jpg";
-import farmyOsImg from "@/assets/project-farmyos.jpg";
-import cropHealImg from "@/assets/project-cropheal.jpg";
-import gramTarakkiImg from "@/assets/project-gramtarakki.jpg";
+import farmyImgAsset from "@/assets/project-farmy.jpg.asset.json";
+import farmyOsImgAsset from "@/assets/project-farmyos.jpg.asset.json";
+import cropHealImgAsset from "@/assets/project-cropheal.jpg.asset.json";
+import gramTarakkiImgAsset from "@/assets/project-gramtarakki.jpg.asset.json";
+
+const farmyImg = farmyImgAsset.url;
+const farmyOsImg = farmyOsImgAsset.url;
+const cropHealImg = cropHealImgAsset.url;
+const gramTarakkiImg = gramTarakkiImgAsset.url;
 
 /**
  * Single place to edit all site content.
