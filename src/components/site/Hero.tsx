@@ -1,5 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import portrait from "@/assets/portrait.jpg";
+import portraitAsset from "@/assets/portrait.jpg.asset.json";
+
+const portrait = portraitAsset.url;
 import { profile } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 
