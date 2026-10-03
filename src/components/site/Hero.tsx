@@ -1,9 +1,8 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import portraitAsset from "@/assets/portrait.jpg.asset.json";
-
-const portrait = portraitAsset.url;
 import { profile } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
+
+const portrait = "/assets/profile.webp";
 
 export function Hero() {
   return (

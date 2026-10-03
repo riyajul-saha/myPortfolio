@@ -77,14 +77,41 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Riyajul Saha — Software Engineer & Product Builder" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Riyajul Saha, a software engineer building modern web and mobile applications with clean UI and scalable systems.",
+      },
+      { name: "author", content: "Riyajul Saha" },
+      {
+        property: "og:title",
+        content: "Riyajul Saha — Software Engineer & Product Builder",
+      },
+      {
+        property: "og:description",
+        content:
+          "Portfolio of Riyajul Saha, a software engineer building modern web and mobile applications with clean UI and scalable systems.",
+      },
       { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content: "/assets/open-graph-social-share-banner.webp",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      {
+        name: "twitter:title",
+        content: "Riyajul Saha — Software Engineer & Product Builder",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Portfolio of Riyajul Saha, a software engineer building modern web and mobile applications with clean UI and scalable systems.",
+      },
+      {
+        name: "twitter:image",
+        content: "/assets/open-graph-social-share-banner.webp",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -98,6 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "apple-touch-icon", href: "/assets/apple-touch-icon.webp" },
     ],
   }),
   shellComponent: RootShell,
