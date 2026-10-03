@@ -6,14 +6,12 @@ import { ProjectModal } from "./ProjectModal";
 import { Reveal, SectionHeading } from "./Reveal";
 
 export function Projects() {
-  const [filter, setFilter] =
-    useState<(typeof projectFilters)[number]>("All");
+  const [filter, setFilter] = useState<(typeof projectFilters)[number]>("All");
   const [selected, setSelected] = useState<Project | null>(null);
 
   const featured = projects.find((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
-  const visible =
-    filter === "All" ? rest : rest.filter((p) => p.type === filter);
+  const visible = filter === "All" ? rest : rest.filter((p) => p.type === filter);
 
   return (
     <section id="projects" className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
@@ -53,12 +51,8 @@ export function Projects() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight">
-                    {featured.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {featured.category}
-                  </p>
+                  <h3 className="text-2xl font-bold tracking-tight">{featured.name}</h3>
+                  <p className="text-sm text-muted-foreground">{featured.category}</p>
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {featured.description}
@@ -132,18 +126,14 @@ export function Projects() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <h3 className="text-lg font-semibold">{p.name}</h3>
-                    <p className="text-xs text-muted-foreground">
-                      {p.category}
-                    </p>
+                    <p className="text-xs text-muted-foreground">{p.category}</p>
                   </div>
                   <span className="shrink-0 rounded-full border border-border bg-surface-2 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
                     {p.type}
                   </span>
                 </div>
 
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {p.description}
-                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{p.description}</p>
 
                 <ul className="flex flex-wrap gap-2">
                   {p.tech.map((t) => (
@@ -166,9 +156,7 @@ export function Projects() {
       </div>
 
       {visible.length === 0 ? (
-        <p className="mt-10 text-sm text-muted-foreground">
-          No projects in this category yet.
-        </p>
+        <p className="mt-10 text-sm text-muted-foreground">No projects in this category yet.</p>
       ) : null}
 
       <ProjectModal project={selected} onClose={() => setSelected(null)} />

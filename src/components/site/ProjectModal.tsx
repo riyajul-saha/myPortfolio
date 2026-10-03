@@ -60,9 +60,7 @@ export function ProjectModal({
           <span className="rounded-full border border-border bg-surface-2 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
             {project.type}
           </span>
-          <h3 className="mt-4 text-2xl font-bold tracking-tight">
-            {project.name}
-          </h3>
+          <h3 className="mt-4 text-2xl font-bold tracking-tight">{project.name}</h3>
           <p className="text-sm text-muted-foreground">{project.category}</p>
 
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">

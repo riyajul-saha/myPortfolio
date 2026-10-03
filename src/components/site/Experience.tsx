@@ -28,9 +28,7 @@ export function Experience() {
             </span>
             <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
             <p className="text-sm text-muted-foreground">{item.org}</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {item.description}
-            </p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
           </Reveal>
         ))}
       </ol>

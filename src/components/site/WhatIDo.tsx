@@ -33,9 +33,7 @@ export function WhatIDo() {
                   </span>
                 </div>
                 <h3 className="mt-6 text-lg font-semibold">{c.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {c.description}
-                </p>
+                <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
               </div>
             </Reveal>
           );

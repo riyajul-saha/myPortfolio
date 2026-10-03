@@ -99,9 +99,7 @@ export function Contact() {
                     id="name"
                     name="name"
                     value={values.name}
-                    onChange={(e) =>
-                      setValues((v) => ({ ...v, name: e.target.value }))
-                    }
+                    onChange={(e) => setValues((v) => ({ ...v, name: e.target.value }))}
                     aria-invalid={Boolean(errors.name)}
                     placeholder="Your name"
                     className={field}
@@ -120,17 +118,13 @@ export function Contact() {
                     name="email"
                     type="email"
                     value={values.email}
-                    onChange={(e) =>
-                      setValues((v) => ({ ...v, email: e.target.value }))
-                    }
+                    onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
                     aria-invalid={Boolean(errors.email)}
                     placeholder="you@company.com"
                     className={field}
                   />
                   {errors.email ? (
-                    <p className="mt-2 text-xs text-destructive">
-                      {errors.email}
-                    </p>
+                    <p className="mt-2 text-xs text-destructive">{errors.email}</p>
                   ) : null}
                 </div>
 
@@ -143,17 +137,13 @@ export function Contact() {
                     name="message"
                     rows={5}
                     value={values.message}
-                    onChange={(e) =>
-                      setValues((v) => ({ ...v, message: e.target.value }))
-                    }
+                    onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
                     aria-invalid={Boolean(errors.message)}
                     placeholder="What are you building?"
                     className={field}
                   />
                   {errors.message ? (
-                    <p className="mt-2 text-xs text-destructive">
-                      {errors.message}
-                    </p>
+                    <p className="mt-2 text-xs text-destructive">{errors.message}</p>
                   ) : null}
                 </div>
 

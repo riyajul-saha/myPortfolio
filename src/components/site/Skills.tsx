@@ -6,8 +6,7 @@ import { Reveal, SectionHeading } from "./Reveal";
 export function Skills() {
   const first = skillCategories[0]!;
   const [active, setActive] = useState(first.category);
-  const current =
-    skillCategories.find((c) => c.category === active) ?? first;
+  const current = skillCategories.find((c) => c.category === active) ?? first;
 
   return (
     <section id="skills" className="mx-auto max-w-6xl px-5 py-20 sm:px-8">

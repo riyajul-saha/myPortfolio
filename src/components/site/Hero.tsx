@@ -25,8 +25,7 @@ export function Hero() {
           <Reveal delay={80}>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.4rem]">
               I build modern web & mobile applications with{" "}
-              <span className="accent-gradient-text">clean UI</span> and
-              scalable systems.
+              <span className="accent-gradient-text">clean UI</span> and scalable systems.
             </h1>
           </Reveal>
 
@@ -107,9 +106,7 @@ export function Hero() {
               />
               <figcaption className="flex items-center justify-between px-3 py-3">
                 <span className="text-sm font-semibold">{profile.name}</span>
-                <span className="text-xs text-muted-foreground">
-                  Software Engineer
-                </span>
+                <span className="text-xs text-muted-foreground">Software Engineer</span>
               </figcaption>
             </figure>
           </div>

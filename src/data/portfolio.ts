@@ -11,8 +11,7 @@ export const profile = {
   name: "Riyajul Saha",
   initials: "RS.",
   role: "Software Engineer & Product Builder",
-  headline:
-    "I build modern web & mobile applications with clean UI and scalable systems.",
+  headline: "I build modern web & mobile applications with clean UI and scalable systems.",
   bio: "I design and ship end-to-end products — from interface and interaction to APIs, data and deployment. Currently focused on commerce platforms, cross-platform mobile apps and applied machine learning.",
   status: "Available for opportunities",
   email: "riyajul@example.com",
@@ -135,22 +134,19 @@ export const timeline: TimelineItem[] = [
     period: "2026",
     title: "ML Internship",
     org: "Ardent Computech",
-    description:
-      "Built and evaluated supervised models, data pipelines and reporting notebooks.",
+    description: "Built and evaluated supervised models, data pipelines and reporting notebooks.",
   },
   {
     period: "2026",
     title: "Web Developer Intern",
     org: "Gram Tarakki Foundation",
-    description:
-      "Shipped the foundation's public website and content workflow end to end.",
+    description: "Shipped the foundation's public website and content workflow end to end.",
   },
   {
     period: "2026",
     title: "Hackathon",
     org: "CropHeal-AI",
-    description:
-      "Prototyped an AI crop disease detector with a vision model and web client.",
+    description: "Prototyped an AI crop disease detector with a vision model and web client.",
   },
 ];
 
@@ -268,10 +264,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const projectFilters = [
-  "All",
-  "Web",
-  "Mobile",
-  "AI/ML",
-  "Full Stack",
-] as const;
+export const projectFilters = ["All", "Web", "Mobile", "AI/ML", "Full Stack"] as const;

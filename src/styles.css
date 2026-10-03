@@ -78,11 +78,7 @@
 
   --glow-accent: 0 0 80px -10px oklch(0.543 0.246 293.2 / 45%);
   --shadow-lift: 0 18px 40px -22px oklch(0 0 0 / 85%);
-  --gradient-accent: linear-gradient(
-    135deg,
-    oklch(0.543 0.246 293.2),
-    oklch(0.62 0.2 310)
-  );
+  --gradient-accent: linear-gradient(135deg, oklch(0.543 0.246 293.2), oklch(0.62 0.2 310));
 }
 
 @layer base {
@@ -115,10 +111,7 @@
 
 /* Faint dot pattern background */
 @utility dot-field {
-  background-image: radial-gradient(
-    oklch(1 0 0 / 7%) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(oklch(1 0 0 / 7%) 1px, transparent 1px);
   background-size: 26px 26px;
 }
 

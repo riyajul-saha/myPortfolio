@@ -41,13 +41,9 @@ export function SectionHeading({
           {label}
         </span>
       ) : null}
-      <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-        {title}
-      </h2>
+      <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
       {subtitle ? (
-        <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-          {subtitle}
-        </p>
+        <p className="mt-3 text-base leading-relaxed text-muted-foreground">{subtitle}</p>
       ) : null}
     </Reveal>
   );
