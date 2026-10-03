@@ -56,6 +56,21 @@ Preview the production build locally:
 npm run preview
 ```
 
+### Deployment
+
+This project is configured for deployment on [Vercel](https://vercel.com):
+
+1. **Via Vercel Dashboard (Recommended)**:
+   - Push your code to GitHub.
+   - Import your repository into [Vercel](https://vercel.com/new).
+   - Vercel will automatically detect the **TanStack Start** framework via `vercel.json` and configure the build settings (`npm run build`).
+   - Click **Deploy**.
+
+2. **Via Vercel CLI**:
+   ```bash
+   npx vercel
+   ```
+
 ### Code Quality
 
 ```bash
