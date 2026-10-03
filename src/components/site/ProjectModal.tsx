@@ -31,41 +31,41 @@ function FormattedText({ text }: { text: string }) {
 
   if (bulletLines.length === 0) {
     return (
-      <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
+      <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-muted-foreground whitespace-pre-line break-words [overflow-wrap:anywhere] min-w-0">
         {text}
       </p>
     );
   }
 
   return (
-    <div className="mt-3 space-y-3">
+    <div className="mt-3 space-y-2.5 sm:space-y-3 min-w-0 w-full">
       {introLines.length > 0 ? (
-        <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
+        <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground break-words [overflow-wrap:anywhere] min-w-0">
           {introLines.join(" ")}
         </p>
       ) : null}
-      <ul className="space-y-2">
+      <ul className="space-y-2 min-w-0 w-full">
         {bulletLines.map((bullet, idx) => {
           const colonIdx = bullet.indexOf(":");
           const hasLabel = colonIdx !== -1 && colonIdx < 50;
           return (
             <li
               key={idx}
-              className="flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed text-muted-foreground"
+              className="flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed text-muted-foreground min-w-0 w-full"
             >
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>
+              <div className="min-w-0 flex-1 break-words [overflow-wrap:anywhere]">
                 {hasLabel ? (
                   <>
                     <strong className="font-semibold text-foreground">
                       {bullet.slice(0, colonIdx + 1)}
                     </strong>{" "}
-                    {bullet.slice(colonIdx + 1).trim()}
+                    <span>{bullet.slice(colonIdx + 1).trim()}</span>
                   </>
                 ) : (
                   bullet
                 )}
-              </span>
+              </div>
             </li>
           );
         })}
@@ -129,22 +129,27 @@ export function ProjectModal({
       role="dialog"
       aria-modal="true"
       aria-label={`${project.name} details`}
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-background/80 p-3 sm:p-5 md:p-8 backdrop-blur-md"
+      className="fixed inset-0 z-[60] flex flex-col justify-end sm:justify-center sm:items-center bg-background/80 p-0 sm:p-4 md:p-6 backdrop-blur-md overflow-hidden w-full max-w-[100vw]"
       onClick={onClose}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-2xl"
+        className="relative flex max-h-[92dvh] sm:max-h-[88vh] w-full max-w-full sm:max-w-3xl md:max-w-4xl flex-col rounded-t-[28px] sm:rounded-3xl border-t sm:border border-border bg-surface shadow-2xl overflow-hidden min-w-0"
       >
+        {/* Mobile top drag indicator handle */}
+        <div className="flex justify-center pt-2.5 pb-1 sm:hidden bg-surface shrink-0">
+          <span className="h-1.5 w-12 rounded-full bg-muted-foreground/30" />
+        </div>
+
         {/* Modal Sticky Header Bar */}
-        <div className="flex shrink-0 items-center justify-between border-b border-border bg-surface/95 px-5 py-4 backdrop-blur-sm sm:px-7">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <span className="rounded-full border border-border bg-surface-2 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
+        <div className="sticky top-0 z-20 flex shrink-0 items-center justify-between gap-3 border-b border-border bg-surface/95 px-4 py-3 sm:px-6 sm:py-3.5 backdrop-blur-md w-full min-w-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap min-w-0 flex-1">
+            <span className="rounded-full border border-border bg-surface-2 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] font-bold uppercase tracking-widest text-primary shrink-0">
               {project.type}
             </span>
             {statusBadge ? (
               <span
-                className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${
+                className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold shrink-0 ${
                   isProduction
                     ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
                     : "border-sky-500/30 bg-sky-500/10 text-sky-400"
@@ -164,24 +169,22 @@ export function ProjectModal({
             type="button"
             onClick={onClose}
             aria-label="Close details"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface-2 text-foreground transition-colors hover:bg-surface hover:text-primary"
+            className="inline-flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-surface-2 text-foreground transition-all hover:bg-surface hover:text-primary active:scale-95"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="overflow-y-auto p-5 sm:p-7 md:p-9 space-y-6 sm:space-y-8">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6 w-full min-w-0 max-w-full pb-8 sm:pb-8">
           {/* Hero Banner & Title */}
-          <div>
-            <div className="relative overflow-hidden rounded-2xl border border-border bg-background">
+          <div className="w-full min-w-0">
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-background w-full min-w-0">
               <img
                 src={project.image}
                 alt={`${project.name} interface preview`}
-                width={1600}
-                height={1008}
                 loading="lazy"
-                className="aspect-[16/9] w-full object-cover object-top sm:aspect-[21/9]"
+                className="max-h-[190px] sm:max-h-[320px] aspect-[16/9] sm:aspect-[21/9] w-full min-w-0 max-w-full object-cover object-top block"
               />
               <div
                 aria-hidden
@@ -189,29 +192,29 @@ export function ProjectModal({
               />
             </div>
 
-            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+            <div className="mt-4 sm:mt-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between min-w-0 w-full">
+              <div className="min-w-0 flex-1">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-foreground leading-tight break-words [overflow-wrap:anywhere]">
                   {project.name}
                 </h2>
-                <p className="mt-1 text-sm font-medium text-primary sm:text-base">
+                <p className="mt-1 text-xs sm:text-sm font-medium text-primary break-words [overflow-wrap:anywhere]">
                   {project.category}
                 </p>
               </div>
 
-              <div className="shrink-0">
-                <ProjectLinks project={project} size="md" />
+              <div className="shrink-0 w-full sm:w-auto">
+                <ProjectLinks project={project} size="md" className="w-full sm:w-auto" />
               </div>
             </div>
           </div>
 
           {/* Section: Overview */}
-          <div className="rounded-2xl border border-primary/20 bg-primary/[0.04] p-5 sm:p-6 backdrop-blur-sm">
+          <div className="rounded-2xl border border-primary/20 bg-primary/[0.04] p-4 sm:p-6 backdrop-blur-sm w-full min-w-0 overflow-hidden">
             <div className="flex items-center gap-2 text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
-              <Sparkles className="h-4 w-4" />
+              <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
               <span>Overview</span>
             </div>
-            <p className="mt-3 text-sm sm:text-base leading-relaxed text-foreground/90">
+            <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-foreground/90 break-words [overflow-wrap:anywhere] min-w-0">
               {project.overview || project.longDescription}
             </p>
           </div>
@@ -219,12 +222,12 @@ export function ProjectModal({
           {/* If rich case study fields exist */}
           {hasCaseStudy ? (
             <>
-              {/* Problem & My Contribution - 2 columns on PC */}
-              <div className="grid gap-5 md:grid-cols-2">
+              {/* Problem & My Contribution */}
+              <div className="grid gap-3.5 sm:gap-5 grid-cols-1 md:grid-cols-2 w-full min-w-0">
                 {project.problem ? (
-                  <div className="rounded-2xl border border-border bg-surface-2/60 p-5 sm:p-6">
+                  <div className="rounded-2xl border border-border bg-surface-2/60 p-4 sm:p-6 w-full min-w-0 overflow-hidden">
                     <div className="flex items-center gap-2 text-foreground font-semibold text-xs sm:text-sm uppercase tracking-wider">
-                      <AlertCircle className="h-4 w-4 text-amber-400" />
+                      <AlertCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-amber-400 shrink-0" />
                       <span>The Problem</span>
                     </div>
                     <FormattedText text={project.problem} />
@@ -232,9 +235,9 @@ export function ProjectModal({
                 ) : null}
 
                 {project.contribution ? (
-                  <div className="rounded-2xl border border-border bg-surface-2/60 p-5 sm:p-6">
+                  <div className="rounded-2xl border border-border bg-surface-2/60 p-4 sm:p-6 w-full min-w-0 overflow-hidden">
                     <div className="flex items-center gap-2 text-foreground font-semibold text-xs sm:text-sm uppercase tracking-wider">
-                      <UserCheck className="h-4 w-4 text-primary" />
+                      <UserCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary shrink-0" />
                       <span>My Contribution</span>
                     </div>
                     <FormattedText text={project.contribution} />
@@ -244,22 +247,22 @@ export function ProjectModal({
 
               {/* Technical Implementation */}
               {project.technicalImplementation ? (
-                <div className="rounded-2xl border border-border bg-surface-2/60 p-5 sm:p-6">
+                <div className="rounded-2xl border border-border bg-surface-2/60 p-4 sm:p-6 w-full min-w-0 overflow-hidden">
                   <div className="flex items-center gap-2 text-foreground font-semibold text-xs sm:text-sm uppercase tracking-wider">
-                    <Cpu className="h-4 w-4 text-primary" />
+                    <Cpu className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary shrink-0" />
                     <span>Technical Implementation</span>
                   </div>
                   <FormattedText text={project.technicalImplementation} />
 
-                  <div className="mt-5 pt-4 border-t border-border/80">
+                  <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-border/80 min-w-0 w-full">
                     <h4 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                       Technologies & Tools
                     </h4>
-                    <ul className="mt-2.5 flex flex-wrap gap-2">
+                    <ul className="mt-2.5 flex flex-wrap gap-1.5 sm:gap-2 min-w-0 w-full">
                       {project.tech.map((t) => (
                         <li
                           key={t}
-                          className="rounded-lg border border-border bg-surface px-2.5 py-1 text-xs font-medium text-foreground"
+                          className="rounded-lg border border-border bg-surface px-2.5 py-1 text-[11px] sm:text-xs font-medium text-foreground shrink-0"
                         >
                           {t}
                         </li>
@@ -270,12 +273,12 @@ export function ProjectModal({
               ) : null}
 
               {/* Key Features */}
-              <div>
-                <div className="flex items-center gap-2 text-foreground font-semibold text-xs sm:text-sm uppercase tracking-wider mb-3.5">
-                  <Layers className="h-4 w-4 text-primary" />
+              <div className="w-full min-w-0">
+                <div className="flex items-center gap-2 text-foreground font-semibold text-xs sm:text-sm uppercase tracking-wider mb-3">
+                  <Layers className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary shrink-0" />
                   <span>Key Features</span>
                 </div>
-                <ul className="grid gap-2.5 sm:grid-cols-2">
+                <ul className="grid gap-2 sm:gap-2.5 grid-cols-1 sm:grid-cols-2 w-full min-w-0">
                   {project.features.map((f) => {
                     const colonIndex = f.indexOf(":");
                     const hasPrefix = colonIndex !== -1 && colonIndex < 40;
@@ -284,12 +287,12 @@ export function ProjectModal({
                     return (
                       <li
                         key={f}
-                        className="flex items-start gap-3 rounded-xl border border-border/70 bg-surface-2/50 p-3 sm:p-3.5"
+                        className="flex items-start gap-2.5 sm:gap-3 rounded-xl border border-border/70 bg-surface-2/50 p-3 sm:p-3.5 w-full min-w-0 overflow-hidden"
                       >
                         <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary mt-0.5">
-                          <Check className="h-3.5 w-3.5" />
+                          <Check className="h-3.5 w-3.5 shrink-0" />
                         </span>
-                        <span className="text-xs sm:text-sm leading-relaxed text-foreground/90">
+                        <div className="text-xs sm:text-sm leading-relaxed text-foreground/90 min-w-0 flex-1 break-words [overflow-wrap:anywhere]">
                           {hasPrefix ? (
                             <>
                               <strong className="font-semibold text-foreground">{label}</strong>{" "}
@@ -298,7 +301,7 @@ export function ProjectModal({
                           ) : (
                             f
                           )}
-                        </span>
+                        </div>
                       </li>
                     );
                   })}
@@ -307,9 +310,9 @@ export function ProjectModal({
 
               {/* Challenges & Solutions */}
               {project.challengesAndSolutions ? (
-                <div className="rounded-2xl border border-border bg-surface-2/60 p-5 sm:p-6">
+                <div className="rounded-2xl border border-border bg-surface-2/60 p-4 sm:p-6 w-full min-w-0 overflow-hidden">
                   <div className="flex items-center gap-2 text-foreground font-semibold text-xs sm:text-sm uppercase tracking-wider">
-                    <Wrench className="h-4 w-4 text-primary" />
+                    <Wrench className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary shrink-0" />
                     <span>Challenges & Solutions</span>
                   </div>
                   <FormattedText text={project.challengesAndSolutions} />
@@ -319,24 +322,24 @@ export function ProjectModal({
               {/* Current Status */}
               {project.currentStatus ? (
                 <div
-                  className={`rounded-2xl border p-5 sm:p-6 ${
+                  className={`rounded-2xl border p-4 sm:p-6 w-full min-w-0 overflow-hidden ${
                     isProduction
                       ? "border-emerald-500/25 bg-emerald-500/[0.05]"
                       : "border-sky-500/25 bg-sky-500/[0.05]"
                   }`}
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center justify-between gap-2 flex-wrap min-w-0">
                     <div
-                      className={`flex items-center gap-2 font-semibold text-xs sm:text-sm uppercase tracking-wider ${
+                      className={`flex items-center gap-1.5 sm:gap-2 font-semibold text-xs sm:text-sm uppercase tracking-wider ${
                         isProduction ? "text-emerald-400" : "text-sky-400"
                       }`}
                     >
-                      <Activity className="h-4 w-4" />
+                      <Activity className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
                       <span>Current Status</span>
                     </div>
 
                     <span
-                      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${
+                      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold shrink-0 ${
                         isProduction
                           ? "border-emerald-500/30 bg-emerald-500/15 text-emerald-300"
                           : "border-sky-500/30 bg-sky-500/15 text-sky-300"
@@ -351,7 +354,7 @@ export function ProjectModal({
                     </span>
                   </div>
 
-                  <p className="mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-muted-foreground break-words [overflow-wrap:anywhere] min-w-0">
                     {statusDescription || statusRaw}
                   </p>
                 </div>
@@ -359,12 +362,12 @@ export function ProjectModal({
             </>
           ) : (
             /* Fallback layout for standard projects without full case study */
-            <div className="grid gap-7 sm:grid-cols-2">
-              <div>
+            <div className="grid gap-4 sm:gap-7 grid-cols-1 sm:grid-cols-2 w-full min-w-0">
+              <div className="min-w-0">
                 <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   Technologies
                 </h4>
-                <ul className="mt-3 flex flex-wrap gap-2">
+                <ul className="mt-2.5 flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tech.map((t) => (
                     <li
                       key={t}
@@ -376,15 +379,18 @@ export function ProjectModal({
                 </ul>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   Key Features
                 </h4>
-                <ul className="mt-3 space-y-2">
+                <ul className="mt-2.5 space-y-2">
                   {project.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span className="text-muted-foreground">{f}</span>
+                    <li
+                      key={f}
+                      className="flex items-start gap-2 text-xs sm:text-sm break-words [overflow-wrap:anywhere] min-w-0"
+                    >
+                      <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
+                      <span className="text-muted-foreground min-w-0 flex-1">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -393,13 +399,13 @@ export function ProjectModal({
           )}
 
           {/* Modal Bottom Actions */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-border">
-            <ProjectLinks project={project} size="md" />
+          <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-5 sm:pt-6 border-t border-border w-full min-w-0">
+            <ProjectLinks project={project} size="md" className="w-full sm:w-auto" />
 
             <button
               type="button"
               onClick={onClose}
-              className="rounded-xl border border-border bg-surface-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-muted-foreground transition-colors hover:bg-surface hover:text-foreground"
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl border border-border bg-surface-2 px-5 py-2.5 text-xs sm:text-sm font-semibold text-muted-foreground transition-all hover:bg-surface hover:text-foreground active:scale-[0.98]"
             >
               Close Details
             </button>
