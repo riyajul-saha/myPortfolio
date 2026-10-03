@@ -11,7 +11,7 @@ const icons = {
 
 export function WhatIDo() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+    <section id="capabilities" className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
       <SectionHeading
         label="What I Do"
         title="Capabilities"

@@ -19,6 +19,118 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/riyajul-saha-linkdin/",
 };
 
+export type AboutDomain = {
+  label: string;
+  icon: "web" | "mobile" | "ai" | "backend";
+  description: string;
+};
+
+export type AboutHighlight = {
+  id: string;
+  title: string;
+  project: string;
+  type: string;
+  description: string;
+  icon: "ecommerce" | "operations" | "ai" | "ngo";
+};
+
+export const aboutData = {
+  heading: "About Me",
+  tagline:
+    "Computer Science student and software developer focused on building practical digital products.",
+  paragraphs: [
+    "I'm Riyajul Saha, a Computer Science student and software developer focused on building practical digital products.",
+    "I work across web development, cross-platform mobile applications, backend systems, and applied machine learning. My projects include an e-commerce platform, an operations app, an AI-based crop disease detection system, and a website for a non-profit organization.",
+    "I enjoy taking ideas from concept to implementation, connecting interfaces with backend services, and improving products through hands-on development.",
+  ],
+  domains: [
+    {
+      label: "Web Development",
+      icon: "web",
+      description: "Modern, responsive, user-focused web apps",
+    },
+    {
+      label: "Mobile Development",
+      icon: "mobile",
+      description: "Cross-platform mobile apps for real-world tasks",
+    },
+    {
+      label: "Backend Systems",
+      icon: "backend",
+      description: "APIs, database architecture, and server logic",
+    },
+    {
+      label: "Applied Machine Learning",
+      icon: "ai",
+      description: "Computer vision and intelligent models",
+    },
+  ] as AboutDomain[],
+  highlights: [
+    {
+      id: "farmy",
+      title: "E-Commerce Platform",
+      project: "Farmy",
+      type: "Full Stack Web & Admin",
+      description:
+        "Full-stack commerce platform for fresh produce with cart, checkout, delivery tracking and role-based inventory admin.",
+      icon: "ecommerce",
+    },
+    {
+      id: "farmyy-os",
+      title: "Operations App",
+      project: "Farmyy-OS",
+      type: "Cross-Platform Mobile",
+      description:
+        "Cross-platform Android companion for live delivery dispatch, store operations, and offline-tolerant sync.",
+      icon: "operations",
+    },
+    {
+      id: "cropheal-ai",
+      title: "AI Crop Disease Detection",
+      project: "CropHeal-AI",
+      type: "Computer Vision & ML",
+      description:
+        "Deep learning vision model classifying crop leaf disease from photos with treatment guidance and confidence scores.",
+      icon: "ai",
+    },
+    {
+      id: "gram-tarakki",
+      title: "Non-Profit Organization Website",
+      project: "Gram Tarakki Foundation",
+      type: "Web Platform & NGO",
+      description:
+        "Public web presence and content workflow powering rural programs, impact stories, and online donation channels.",
+      icon: "ngo",
+    },
+  ] as AboutHighlight[],
+  stats: [
+    { value: "4+", label: "Flagship Projects", sub: "Web, Mobile & AI" },
+    { value: "CS", label: "Student & Engineer", sub: "Practical focus" },
+    { value: "End-to-End", label: "Full Lifecycle", sub: "Ideation to deploy" },
+    { value: "Hands-on", label: "Product Mindset", sub: "Interface to backend" },
+  ],
+  pillars: [
+    {
+      num: "01",
+      title: "Concept to Implementation",
+      description:
+        "Transforming abstract ideas into functional, intuitive, and deployable software architectures.",
+    },
+    {
+      num: "02",
+      title: "Interface & Backend Synergy",
+      description:
+        "Bridging sleek UI with robust APIs, responsive databases, and intelligent services.",
+    },
+    {
+      num: "03",
+      title: "Hands-On Continuous Refinement",
+      description:
+        "Iterating directly through code, user feedback, performance optimization, and testing.",
+    },
+  ],
+};
+
 export type Capability = {
   index: string;
   title: string;
