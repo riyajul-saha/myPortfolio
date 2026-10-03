@@ -14,9 +14,9 @@ export const profile = {
   headline: "I build modern web & mobile applications with clean UI and scalable systems.",
   bio: "I design and ship end-to-end products — from interface and interaction to APIs, data and deployment. Currently focused on commerce platforms, cross-platform mobile apps and applied machine learning.",
   status: "Available for opportunities",
-  email: "riyajul@example.com",
-  github: "https://github.com/",
-  linkedin: "https://linkedin.com/in/",
+  email: "riyajsaha879@gmail.com",
+  github: "https://github.com/riyajul-saha/",
+  linkedin: "https://www.linkedin.com/in/riyajul-saha-linkdin/",
 };
 
 export type Capability = {
@@ -116,6 +116,9 @@ export const skillCategories: SkillCategory[] = [
       { name: "Linux", usedFor: ["Servers", "Shell"] },
       { name: "Vercel", usedFor: ["Frontend hosting"] },
       { name: "Render", usedFor: ["Backend hosting"] },
+      { name: "Colab", usedFor: ["Cloud GPU", "Notebooks"] },
+      { name: "Kaggle", usedFor: ["Datasets", "Competitions"] },
+      { name: "Hugging Face", usedFor: ["Models", "Inference"] },
       { name: "Jupyter", usedFor: ["Experiments"] },
       { name: "VS Code", usedFor: ["Development"] },
     ],
@@ -192,9 +195,9 @@ export const projects: Project[] = [
     ],
     featured: true,
     links: {
-      website: "https://example.com/farmy",
-      apk: "https://example.com/farmy.apk",
-      github: "https://github.com/",
+      website: "https://farmyy-sigma.vercel.app/",
+      apk: "https://github.com/riyajul-saha/myPortfolio/releases/download/v0.1/Farmy-V0.1.apk",
+      github: "https://github.com/riyajul-saha/",
     },
   },
   {
@@ -215,8 +218,9 @@ export const projects: Project[] = [
       "Offline-tolerant sync",
     ],
     links: {
-      apk: "https://example.com/farmyy-os.apk",
-      github: "https://github.com/",
+      website: "https://farmyy-os.vercel.app/",
+      apk: "https://github.com/riyajul-saha/myPortfolio/releases/download/v1.01/FarmyOS-V01.apk",
+      github: "https://github.com/riyajul-saha/",
     },
   },
   {
@@ -237,21 +241,21 @@ export const projects: Project[] = [
       "Care and treatment tips",
     ],
     links: {
-      website: "https://example.com/cropheal",
-      github: "https://github.com/",
+      website: "https://huggingface.co/spaces/trio-rds-tensors/CropHeal-AI",
+      github: "https://github.com/trio-rds-tensors/CropHeal-AI",
     },
   },
   {
     id: "gram-tarakki",
     name: "Gram Tarakki Foundation",
-    category: "Non-Profit Website & CMS",
+    category: "Non-Profit Website & NGO",
     description:
       "Public website for a rural development foundation with programs, stories and donations.",
     longDescription:
       "A fast, accessible website for a rural development foundation. It presents programs and impact stories, accepts donations, and gives the team a simple editable content structure so campaigns can ship without a developer.",
     image: gramTarakkiImg,
     type: "Web",
-    tech: ["React", "Tailwind", "Node.js", "MySQL"],
+    tech: ["Flask", "HTML", "CSS", "JavaScript", "MySQL"],
     features: [
       "Program and story pages",
       "Donation flow",
@@ -259,7 +263,7 @@ export const projects: Project[] = [
       "Accessible, responsive layout",
     ],
     links: {
-      website: "https://example.com/gram-tarakki",
+      website: "https://gramtarakkifoundation.org/",
     },
   },
 ];

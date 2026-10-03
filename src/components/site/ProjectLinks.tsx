@@ -13,6 +13,9 @@ export function ProjectLinks({ project, size = "sm" }: { project: Project; size?
   const primary = `inline-flex items-center gap-2 rounded-xl bg-primary font-semibold text-primary-foreground transition-colors hover:bg-primary/85 ${base}`;
   const ghost = `inline-flex items-center gap-2 rounded-xl border border-border bg-surface-2 font-semibold transition-colors hover:bg-surface ${base}`;
 
+  const isDemo = project.id !== "gram-tarakki";
+  const webLabel = isDemo ? "Live Demo" : "Visit Website";
+
   return (
     <div className="flex flex-wrap gap-2">
       {website ? (
@@ -21,9 +24,9 @@ export function ProjectLinks({ project, size = "sm" }: { project: Project; size?
           target="_blank"
           rel="noreferrer"
           className={primary}
-          aria-label={`${all ? "Live demo" : "Visit website"} for ${project.name}`}
+          aria-label={`${webLabel} for ${project.name}`}
         >
-          {all ? "Live Demo" : "Visit Website"} <ArrowUpRight className="h-4 w-4" />
+          {webLabel} <ArrowUpRight className="h-4 w-4" />
         </a>
       ) : null}
 
