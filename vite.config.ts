@@ -36,6 +36,7 @@ export default defineConfig(async ({ command }) => {
   plugins.push(viteReact());
 
   return {
+    envPrefix: ["VITE_", "WEB3FORM_"],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
