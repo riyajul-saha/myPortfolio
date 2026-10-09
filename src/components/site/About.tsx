@@ -34,6 +34,7 @@ export function About() {
   return (
     <section
       id="about"
+      aria-labelledby="about-heading"
       className="relative mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20 overflow-hidden"
     >
       {/* Decorative ambient background glows contained so they do not cause horizontal overflow */}
@@ -43,6 +44,7 @@ export function About() {
       </div>
 
       <SectionHeading
+        id="about-heading"
         label={aboutData.heading}
         title="Building practical digital products from idea to production"
         subtitle="Computer Science student & developer bridging intuitive user interfaces with robust backend architectures."
@@ -106,9 +108,9 @@ export function About() {
                   <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </span>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-semibold text-foreground">
+                  <h3 className="text-xs sm:text-sm font-semibold text-foreground">
                     Concept ➔ Architecture ➔ Integration ➔ Polish
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                     Connecting responsive user interfaces with resilient backend APIs, databases,
                     and intelligent models through continuous, hands-on iteration.
@@ -177,9 +179,9 @@ export function About() {
                           </span>
                           <div className="min-w-0">
                             <div className="flex items-center gap-2">
-                              <h4 className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                              <h3 className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">
                                 {h.title}
-                              </h4>
+                              </h3>
                             </div>
                             <p className="text-[10px] sm:text-[11px] font-medium text-primary/90 mt-0.5">
                               {h.project} • {h.type}
@@ -201,9 +203,9 @@ export function About() {
           {/* Core Pillars / Mindset */}
           <Reveal delay={200}>
             <div className="rounded-2xl sm:rounded-3xl border border-border bg-surface/80 p-4 sm:p-6 backdrop-blur-md">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 Core Principles
-              </h4>
+              </h3>
               <ul className="mt-3 sm:mt-4 space-y-3 sm:space-y-3.5">
                 {aboutData.pillars.map((p) => (
                   <li key={p.num} className="flex items-start gap-2.5 sm:gap-3">

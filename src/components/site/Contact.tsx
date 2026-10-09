@@ -36,11 +36,15 @@ export function Contact() {
   return (
     <section
       id="contact"
+      aria-labelledby="contact-heading"
       className="relative mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20 overflow-x-clip"
     >
       <div className="grid gap-10 sm:gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+          <h2
+            id="contact-heading"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight"
+          >
             Let's build something together.
           </h2>
           <p className="mt-2 sm:mt-3 text-sm sm:text-base text-muted-foreground">
@@ -51,7 +55,7 @@ export function Contact() {
             <a
               href={profile.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               <Github className="h-4 w-4 shrink-0" /> GitHub
@@ -59,7 +63,7 @@ export function Contact() {
             <a
               href={profile.linkedin}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               <Linkedin className="h-4 w-4 shrink-0" /> LinkedIn

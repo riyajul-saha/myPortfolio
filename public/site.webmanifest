@@ -1,0 +1,21 @@
+{
+  "name": "Riyajul Saha — Software Developer",
+  "short_name": "Riyajul Saha",
+  "description": "Portfolio of Riyajul Saha, a Computer Science student and software developer in West Bengal, India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.webp",
+      "sizes": "180x180",
+      "type": "image/webp"
+    }
+  ]
+}

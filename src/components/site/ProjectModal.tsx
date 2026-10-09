@@ -114,7 +114,7 @@ export function ProjectModal({
 
   if (statusRaw.includes("—")) {
     const [badge, ...rest] = statusRaw.split("—");
-    statusBadge = badge.trim();
+    statusBadge = (badge ?? "").trim();
     statusDescription = rest.join("—").trim();
   } else if (isProduction) {
     statusBadge = "Production";
@@ -202,8 +202,11 @@ export function ProjectModal({
             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border border-border bg-background w-full">
               <img
                 src={project.image}
-                alt={`${project.name} interface preview`}
+                alt={`${project.name} detailed project preview`}
+                width={1600}
+                height={1000}
                 loading="lazy"
+                decoding="async"
                 className="w-full max-w-full object-cover object-top block aspect-[16/9] sm:aspect-[16/8] max-h-[220px] sm:max-h-[320px]"
               />
               <div
@@ -274,9 +277,9 @@ export function ProjectModal({
                   <FormattedText text={project.technicalImplementation} />
 
                   <div className="mt-4 pt-3 border-t border-border/80 min-w-0 w-full">
-                    <h4 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    <h3 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                       Technologies &amp; Tools
-                    </h4>
+                    </h3>
                     <ul className="mt-2 flex flex-wrap gap-1.5 sm:gap-2 min-w-0 w-full">
                       {project.tech.map((t) => (
                         <li
@@ -383,9 +386,9 @@ export function ProjectModal({
             /* Fallback: standard project without full case study */
             <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 w-full min-w-0">
               <div className="min-w-0">
-                <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   Technologies
-                </h4>
+                </h3>
                 <ul className="mt-2 sm:mt-2.5 flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tech.map((t) => (
                     <li
@@ -399,9 +402,9 @@ export function ProjectModal({
               </div>
 
               <div className="min-w-0">
-                <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   Key Features
-                </h4>
+                </h3>
                 <ul className="mt-2 sm:mt-2.5 space-y-1.5 sm:space-y-2">
                   {project.features.map((f) => (
                     <li

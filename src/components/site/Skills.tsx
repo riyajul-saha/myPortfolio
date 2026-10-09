@@ -9,12 +9,39 @@ export function Skills() {
   const current = skillCategories.find((c) => c.category === active) ?? first;
 
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20 overflow-x-clip">
+    <section
+      id="skills"
+      aria-labelledby="skills-heading"
+      className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20 overflow-x-clip"
+    >
       <SectionHeading
+        id="skills-heading"
         label="Stack"
         title="Skills & Technologies"
         subtitle="Technologies I use to design, build and deploy digital products."
       />
+
+      {/* Static HTML fallback for search engine crawlers and users without JavaScript */}
+      <noscript>
+        <div className="mt-8 space-y-6">
+          {skillCategories.map((c) => (
+            <div key={c.category} className="rounded-2xl border border-border bg-surface p-5">
+              <h3 className="text-base font-semibold text-foreground mb-3">{c.category}</h3>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+                {c.skills.map((s) => (
+                  <li
+                    key={s.name}
+                    className="rounded-xl border border-border bg-surface-2 p-2.5 text-xs text-muted-foreground"
+                  >
+                    <strong className="text-foreground block font-medium">{s.name}</strong>
+                    <span>{s.usedFor.join(" • ")}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </noscript>
 
       {/* Category filter tabs — scrollable on very narrow screens */}
       <Reveal className="mt-8 sm:mt-10">

@@ -242,26 +242,39 @@ export type TimelineItem = {
   title: string;
   org: string;
   description: string;
+  measurableResults?: string[];
 };
 
 export const timeline: TimelineItem[] = [
   {
-    period: "2026",
+    period: "[Month YYYY – Month YYYY]",
     title: "ML Internship",
     org: "Ardent Computech",
     description: "Built and evaluated supervised models, data pipelines and reporting notebooks.",
+    measurableResults: [
+      "[Measurable result: e.g., Evaluated N models with X% improvement in metric]",
+      "[Measurable result: e.g., Processed N+ data records across ML training pipelines]",
+    ],
   },
   {
-    period: "2026",
+    period: "[Month YYYY – Month YYYY]",
     title: "Web Developer Intern",
     org: "Gram Tarakki Foundation",
     description: "Shipped the foundation's public website and content workflow end to end.",
+    measurableResults: [
+      "[Measurable result: e.g., Onboarded N+ volunteers and reduced verification time by X%]",
+      "[Measurable result: e.g., Handled N+ monthly site visits with Razorpay donations]",
+    ],
   },
   {
-    period: "2026",
+    period: "[Month YYYY]",
     title: "Hackathon",
     org: "CropHeal-AI",
     description: "Prototyped an AI crop disease detector with a vision model and web client.",
+    measurableResults: [
+      "[Measurable result: e.g., Diagnosed leaf images in <X seconds with N% top-1 accuracy]",
+      "[Measurable result: e.g., Integrated 3 LLM providers for treatment plans]",
+    ],
   },
 ];
 
@@ -269,6 +282,7 @@ export type ProjectType = "Web" | "Mobile" | "AI/ML" | "Full Stack";
 
 export type Project = {
   id: string;
+  slug: string;
   name: string;
   category: string;
   description: string;
@@ -294,6 +308,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "farmy",
+    slug: "farmy",
     name: "Farmy",
     category: "Fruit E-Commerce & Delivery Platform",
     description:
@@ -339,11 +354,12 @@ export const projects: Project[] = [
     links: {
       website: "https://farmyy-sigma.vercel.app/",
       apk: "https://github.com/riyajul-saha/myPortfolio/releases/download/v0.1/Farmy-V0.1.apk",
-      github: "https://github.com/riyajul-saha/",
+      github: "https://github.com/riyajul-saha/farmy",
     },
   },
   {
     id: "farmyy-os",
+    slug: "farmyos",
     name: "FarmyOS",
     category: "E-Commerce Administration & Management System",
     description:
@@ -378,11 +394,12 @@ export const projects: Project[] = [
     links: {
       website: "https://farmyy-os.vercel.app/",
       apk: "https://github.com/riyajul-saha/myPortfolio/releases/download/v1.01/FarmyOS-V01.apk",
-      github: "https://github.com/riyajul-saha/",
+      github: "https://github.com/riyajul-saha/farmyos",
     },
   },
   {
     id: "cropheal-ai",
+    slug: "cropheal-ai",
     name: "CropHeal AI",
     category: "Intelligent Agricultural Healthcare & Vision System",
     description:
@@ -426,6 +443,7 @@ export const projects: Project[] = [
   },
   {
     id: "gram-tarakki",
+    slug: "gram-tarakki-foundation",
     name: "Gram Tarakki Foundation",
     category: "Non-Profit Organization & Social Welfare Web Platform",
     description:
@@ -466,3 +484,7 @@ export const projects: Project[] = [
 ];
 
 export const projectFilters = ["All", "Web", "Mobile", "AI/ML", "Full Stack"] as const;
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug || p.id === slug);
+}

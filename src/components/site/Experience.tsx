@@ -3,8 +3,13 @@ import { Reveal, SectionHeading } from "./Reveal";
 
 export function Experience() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20 overflow-x-clip">
+    <section
+      id="experience"
+      aria-labelledby="experience-heading"
+      className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20 overflow-x-clip"
+    >
       <SectionHeading
+        id="experience-heading"
         label="Experience"
         title="Where I've worked and what I've shipped"
         subtitle="Internships, roles and build sprints from 2026."
@@ -32,6 +37,19 @@ export function Experience() {
             <p className="mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
               {item.description}
             </p>
+            {item.measurableResults && item.measurableResults.length > 0 ? (
+              <ul className="mt-3 space-y-1.5 border-t border-border/60 pt-2.5">
+                {item.measurableResults.map((result, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-1.5 text-[11px] sm:text-xs text-muted-foreground leading-relaxed"
+                  >
+                    <span className="text-primary font-bold leading-none mt-0.5">•</span>
+                    <span>{result}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </Reveal>
         ))}
       </ol>

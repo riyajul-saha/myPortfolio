@@ -10,33 +10,90 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsCrophealAiRouteImport } from './routes/projects/cropheal-ai'
+import { Route as ProjectsFarmyRouteImport } from './routes/projects/farmy'
+import { Route as ProjectsFarmyosRouteImport } from './routes/projects/farmyos'
+import { Route as ProjectsGramTarakkiFoundationRouteImport } from './routes/projects/gram-tarakki-foundation'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsCrophealAiRoute = ProjectsCrophealAiRouteImport.update({
+  id: '/projects/cropheal-ai',
+  path: '/projects/cropheal-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsFarmyRoute = ProjectsFarmyRouteImport.update({
+  id: '/projects/farmy',
+  path: '/projects/farmy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsFarmyosRoute = ProjectsFarmyosRouteImport.update({
+  id: '/projects/farmyos',
+  path: '/projects/farmyos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsGramTarakkiFoundationRoute =
+  ProjectsGramTarakkiFoundationRouteImport.update({
+    id: '/projects/gram-tarakki-foundation',
+    path: '/projects/gram-tarakki-foundation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/projects/cropheal-ai': typeof ProjectsCrophealAiRoute
+  '/projects/farmy': typeof ProjectsFarmyRoute
+  '/projects/farmyos': typeof ProjectsFarmyosRoute
+  '/projects/gram-tarakki-foundation': typeof ProjectsGramTarakkiFoundationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/projects/cropheal-ai': typeof ProjectsCrophealAiRoute
+  '/projects/farmy': typeof ProjectsFarmyRoute
+  '/projects/farmyos': typeof ProjectsFarmyosRoute
+  '/projects/gram-tarakki-foundation': typeof ProjectsGramTarakkiFoundationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/projects/cropheal-ai': typeof ProjectsCrophealAiRoute
+  '/projects/farmy': typeof ProjectsFarmyRoute
+  '/projects/farmyos': typeof ProjectsFarmyosRoute
+  '/projects/gram-tarakki-foundation': typeof ProjectsGramTarakkiFoundationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/projects/cropheal-ai'
+    | '/projects/farmy'
+    | '/projects/farmyos'
+    | '/projects/gram-tarakki-foundation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/projects/cropheal-ai'
+    | '/projects/farmy'
+    | '/projects/farmyos'
+    | '/projects/gram-tarakki-foundation'
+  id:
+    | '__root__'
+    | '/'
+    | '/projects/cropheal-ai'
+    | '/projects/farmy'
+    | '/projects/farmyos'
+    | '/projects/gram-tarakki-foundation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ProjectsCrophealAiRoute: typeof ProjectsCrophealAiRoute
+  ProjectsFarmyRoute: typeof ProjectsFarmyRoute
+  ProjectsFarmyosRoute: typeof ProjectsFarmyosRoute
+  ProjectsGramTarakkiFoundationRoute: typeof ProjectsGramTarakkiFoundationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +105,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/cropheal-ai': {
+      id: '/projects/cropheal-ai'
+      path: '/projects/cropheal-ai'
+      fullPath: '/projects/cropheal-ai'
+      preLoaderRoute: typeof ProjectsCrophealAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/farmy': {
+      id: '/projects/farmy'
+      path: '/projects/farmy'
+      fullPath: '/projects/farmy'
+      preLoaderRoute: typeof ProjectsFarmyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/farmyos': {
+      id: '/projects/farmyos'
+      path: '/projects/farmyos'
+      fullPath: '/projects/farmyos'
+      preLoaderRoute: typeof ProjectsFarmyosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/gram-tarakki-foundation': {
+      id: '/projects/gram-tarakki-foundation'
+      path: '/projects/gram-tarakki-foundation'
+      fullPath: '/projects/gram-tarakki-foundation'
+      preLoaderRoute: typeof ProjectsGramTarakkiFoundationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ProjectsCrophealAiRoute: ProjectsCrophealAiRoute,
+  ProjectsFarmyRoute: ProjectsFarmyRoute,
+  ProjectsFarmyosRoute: ProjectsFarmyosRoute,
+  ProjectsGramTarakkiFoundationRoute: ProjectsGramTarakkiFoundationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -33,7 +33,9 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+import type { ErrorComponentProps } from "@tanstack/react-router";
+
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
 
@@ -68,46 +70,33 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+import { SEO_CONFIG, structuredData } from "@/lib/seo";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Riyajul Saha — Software Engineer & Product Builder" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Riyajul Saha, a software engineer building modern web and mobile applications with clean UI and scalable systems.",
-      },
-      { name: "author", content: "Riyajul Saha" },
-      {
-        property: "og:title",
-        content: "Riyajul Saha — Software Engineer & Product Builder",
-      },
-      {
-        property: "og:description",
-        content:
-          "Portfolio of Riyajul Saha, a software engineer building modern web and mobile applications with clean UI and scalable systems.",
-      },
+      { title: SEO_CONFIG.title },
+      { name: "description", content: SEO_CONFIG.description },
+      { name: "author", content: SEO_CONFIG.name },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "theme-color", content: SEO_CONFIG.themeColor },
       { property: "og:type", content: "website" },
-      {
-        property: "og:image",
-        content: "/assets/open-graph-social-share-banner.webp",
-      },
+      { property: "og:site_name", content: SEO_CONFIG.siteName },
+      { property: "og:locale", content: SEO_CONFIG.locale },
+      { property: "og:url", content: SEO_CONFIG.url },
+      { property: "og:title", content: SEO_CONFIG.title },
+      { property: "og:description", content: SEO_CONFIG.description },
+      { property: "og:image", content: SEO_CONFIG.ogImage.url },
+      { property: "og:image:width", content: String(SEO_CONFIG.ogImage.width) },
+      { property: "og:image:height", content: String(SEO_CONFIG.ogImage.height) },
+      { property: "og:image:alt", content: SEO_CONFIG.ogImage.alt },
       { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "twitter:title",
-        content: "Riyajul Saha — Software Engineer & Product Builder",
-      },
-      {
-        name: "twitter:description",
-        content:
-          "Portfolio of Riyajul Saha, a software engineer building modern web and mobile applications with clean UI and scalable systems.",
-      },
-      {
-        name: "twitter:image",
-        content: "/assets/open-graph-social-share-banner.webp",
-      },
+      { name: "twitter:title", content: SEO_CONFIG.title },
+      { name: "twitter:description", content: SEO_CONFIG.description },
+      { name: "twitter:image", content: SEO_CONFIG.ogImage.url },
+      { name: "twitter:image:alt", content: SEO_CONFIG.ogImage.alt },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -117,11 +106,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap",
       },
       {
+        rel: "preload",
+        as: "image",
+        href: "/assets/profile.webp",
+        type: "image/webp",
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "apple-touch-icon", href: "/assets/apple-touch-icon.webp" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.webp" },
+      { rel: "manifest", href: "/site.webmanifest" },
     ],
   }),
   shellComponent: RootShell,
@@ -135,6 +131,10 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body>
         {children}

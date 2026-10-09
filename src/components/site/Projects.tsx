@@ -16,9 +16,11 @@ export function Projects() {
   return (
     <section
       id="projects"
+      aria-labelledby="projects-heading"
       className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20 overflow-x-clip"
     >
       <SectionHeading
+        id="projects-heading"
         label="Proof"
         title="Selected Projects"
         subtitle="A collection of products, experiments and applications I've built."
@@ -37,10 +39,11 @@ export function Projects() {
               >
                 <img
                   src={featured.image}
-                  alt={`${featured.name} interface preview`}
+                  alt={`${featured.name} — ${featured.category} preview interface`}
                   width={1600}
-                  height={1008}
+                  height={1000}
                   loading="lazy"
+                  decoding="async"
                   className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                 />
               </button>
@@ -75,12 +78,18 @@ export function Projects() {
                 </ul>
                 <div className="mt-1 sm:mt-2 flex flex-wrap items-center gap-2">
                   <ProjectLinks project={featured} />
+                  <a
+                    href={`/projects/${featured.slug}`}
+                    className="inline-flex items-center gap-1 rounded-xl border border-border bg-surface px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-semibold text-primary transition-colors hover:bg-surface-2 hover:text-foreground"
+                  >
+                    Case Study →
+                  </a>
                   <button
                     type="button"
                     onClick={() => setSelected(featured)}
-                    className="rounded-xl px-3 py-2 sm:py-2.5 text-xs font-semibold text-primary transition-colors hover:text-foreground"
+                    className="rounded-xl px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    Case details
+                    Quick modal
                   </button>
                 </div>
               </div>
@@ -124,10 +133,11 @@ export function Projects() {
               >
                 <img
                   src={p.image}
-                  alt={`${p.name} interface preview`}
+                  alt={`${p.name} — ${p.category} application preview interface`}
                   width={1600}
-                  height={1008}
+                  height={1000}
                   loading="lazy"
+                  decoding="async"
                   className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.05]"
                 />
               </button>
@@ -158,8 +168,14 @@ export function Projects() {
                   ))}
                 </ul>
 
-                <div className="mt-auto pt-2 sm:pt-3">
+                <div className="mt-auto pt-2 sm:pt-3 flex flex-wrap items-center justify-between gap-2">
                   <ProjectLinks project={p} />
+                  <a
+                    href={`/projects/${p.slug}`}
+                    className="inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-semibold text-primary transition-colors hover:text-foreground"
+                  >
+                    Case Study →
+                  </a>
                 </div>
               </div>
             </article>

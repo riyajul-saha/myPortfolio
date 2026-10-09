@@ -35,7 +35,7 @@ export function ProjectLinks({
         <a
           href={website}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className={primary}
           aria-label={`${webLabel} for ${project.name}`}
         >
@@ -47,7 +47,7 @@ export function ProjectLinks({
         <a
           href={apk}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className={website ? ghost : primary}
           aria-label={`Download ${project.name} app`}
         >
@@ -59,7 +59,7 @@ export function ProjectLinks({
         <a
           href={github}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className={website || apk ? ghost : primary}
           aria-label={`Source code for ${project.name}`}
         >

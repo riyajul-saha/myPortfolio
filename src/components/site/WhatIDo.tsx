@@ -13,9 +13,11 @@ export function WhatIDo() {
   return (
     <section
       id="capabilities"
+      aria-labelledby="capabilities-heading"
       className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20 overflow-x-clip"
     >
       <SectionHeading
+        id="capabilities-heading"
         label="What I Do"
         title="Capabilities"
         subtitle="Four areas I work across, from interface to infrastructure."
