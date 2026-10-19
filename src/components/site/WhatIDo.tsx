@@ -1,4 +1,5 @@
-import { Brain, Globe, Server, Smartphone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, Brain, Globe, Server, Smartphone } from "lucide-react";
 import { capabilities } from "@/data/portfolio";
 import { Reveal, SectionHeading } from "./Reveal";
 
@@ -7,6 +8,13 @@ const icons = {
   mobile: Smartphone,
   ai: Brain,
   backend: Server,
+};
+
+const serviceLinks: Record<string, string> = {
+  web: "/services/web-developer",
+  mobile: "/services/software-developer",
+  ai: "/services/ai-agent-builder",
+  backend: "/services/software-developer",
 };
 
 export function WhatIDo() {
@@ -19,29 +27,41 @@ export function WhatIDo() {
       <SectionHeading
         id="capabilities-heading"
         label="What I Do"
-        title="Capabilities"
-        subtitle="Four areas I work across, from interface to infrastructure."
+        title="Capabilities & Services"
+        subtitle="End-to-end engineering across web applications, cross-platform mobile, and AI solutions."
       />
 
       <ul className="mt-10 sm:mt-12 grid gap-px overflow-hidden rounded-2xl sm:rounded-3xl border border-border bg-border grid-cols-1 xs:grid-cols-2 sm:grid-cols-2">
         {capabilities.map((c, i) => {
           const Icon = icons[c.icon];
+          const serviceHref = serviceLinks[c.icon] || "/services/software-developer";
           return (
             <Reveal as="li" key={c.index} delay={i * 70}>
-              <div className="group h-full bg-background p-5 sm:p-6 md:p-7 transition-colors hover:bg-surface">
-                <div className="flex items-start justify-between">
-                  <span className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl sm:rounded-2xl border border-border bg-surface text-primary transition-transform group-hover:scale-105">
-                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </span>
-                  <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-muted-foreground">
-                    {c.index}
-                  </span>
+              <Link
+                to={serviceHref}
+                className="group flex flex-col justify-between h-full bg-background p-5 sm:p-6 md:p-7 transition-colors hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                <div>
+                  <div className="flex items-start justify-between">
+                    <span className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl sm:rounded-2xl border border-border bg-surface text-primary transition-transform group-hover:scale-105">
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                    </span>
+                    <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-muted-foreground">
+                      {c.index}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 sm:mt-6 text-base sm:text-lg font-semibold group-hover:text-primary transition-colors">
+                    {c.title}
+                  </h3>
+                  <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {c.description}
+                  </p>
                 </div>
-                <h3 className="mt-4 sm:mt-6 text-base sm:text-lg font-semibold">{c.title}</h3>
-                <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  {c.description}
-                </p>
-              </div>
+                <div className="mt-5 pt-3.5 border-t border-border/40 flex items-center justify-between text-xs font-semibold text-primary">
+                  <span>Explore Service &amp; Case Studies</span>
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </div>
+              </Link>
             </Reveal>
           );
         })}

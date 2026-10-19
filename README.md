@@ -137,22 +137,28 @@ myPortfolio/
 │   │   │   ├── Projects.tsx      # Filterable project grid & modal trigger
 │   │   │   ├── ProjectModal.tsx  # In-depth overlay modal for project details
 │   │   │   ├── ProjectDetailView.tsx # Full-page project case study template
+│   │   │   ├── ServiceDetailView.tsx # Dedicated SEO landing page for service offerings
 │   │   │   ├── Contact.tsx       # Interactive form integrated with Web3Forms
 │   │   │   └── Navbar.tsx        # Sticky navigation with mobile menu
 │   │   └── ui/                   # Reusable atomic UI primitives (Radix-backed)
 │   ├── data/
-│   │   └── portfolio.ts          # Central source of truth for all content & projects
+│   │   ├── portfolio.ts          # Central source of truth for portfolio content & projects
+│   │   └── services.ts           # SEO-optimized data, FAQs & use cases for services
 │   ├── lib/
 │   │   ├── seo.ts                # Meta tags, Open Graph config & JSON-LD schemas
 │   │   └── utils.ts              # Class merging (cn) and shared helpers
 │   ├── routes/                   # File-based routes (TanStack Router)
 │   │   ├── __root.tsx            # Global HTML document shell, head tags & scripts
 │   │   ├── index.tsx             # Homepage aggregating all sections
-│   │   └── projects/             # Standalone project routes (/projects/:slug)
-│   │       ├── cropheal-ai.tsx
-│   │       ├── farmy.tsx
-│   │       ├── farmyos.tsx
-│   │       └── gram-tarakki-foundation.tsx
+│   │   ├── projects/             # Standalone project routes (/projects/:slug)
+│   │   │   ├── cropheal-ai.tsx
+│   │   │   ├── farmy.tsx
+│   │   │   ├── farmyos.tsx
+│   │   │   └── gram-tarakki-foundation.tsx
+│   │   └── services/             # Dedicated service routes (/services/:slug)
+│   │       ├── ai-agent-builder.tsx
+│   │       ├── software-developer.tsx
+│   │       └── web-developer.tsx
 │   ├── router.tsx                # Client router configuration
 │   ├── server.ts                 # Nitro server entrypoint
 │   ├── start.ts                  # TanStack Start application instance

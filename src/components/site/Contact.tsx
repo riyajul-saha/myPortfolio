@@ -7,8 +7,8 @@ type Errors = { name?: string; email?: string; message?: string };
 type Status = "idle" | "submitting" | "success" | "error";
 
 const WEB3FORMS_ACCESS_KEY =
-  (import.meta.env.VITE_WEB3FORM_ACCESS_KEY as string | undefined) ||
-  (import.meta.env.WEB3FORM_ACCESS_KEY as string | undefined) ||
+  (import.meta.env["VITE_WEB3FORM_ACCESS_KEY"] as string | undefined) ||
+  (import.meta.env["WEB3FORM_ACCESS_KEY"] as string | undefined) ||
   "cd0eaa08-7267-44a4-baae-f086996860c0";
 
 export function Contact() {

@@ -38,9 +38,41 @@ export const structuredData = {
         addressRegion: "West Bengal",
         addressCountry: "IN",
       },
-      alumniOf: {
-        "@type": "EducationalOrganization",
-        name: "[College/University Name - Update with your institution]",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Development & Engineering Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Software & App Development",
+              description:
+                "Custom software engineering, cross-platform mobile apps (React Native & Expo), and backend architecture.",
+              url: "https://riyajulsaha.is-a.dev/services/software-developer",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Web & SaaS Development",
+              description:
+                "Full-stack web applications, Python Flask and Node.js backends, responsive business portals, and SaaS development.",
+              url: "https://riyajulsaha.is-a.dev/services/web-developer",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Agent Builder & Machine Learning",
+              description:
+                "Autonomous AI agents, custom LLM reasoning workflows, computer vision models, and intelligent business process automation.",
+              url: "https://riyajulsaha.is-a.dev/services/ai-agent-builder",
+            },
+          },
+        ],
       },
       knowsAbout: [
         "Web Development",
@@ -120,6 +152,45 @@ export const structuredData = {
       author: {
         "@id": `${SEO_CONFIG.url}#person`,
       },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SEO_CONFIG.url}services/software-developer#service`,
+      name: "Software & App Developer and Freelance Developer",
+      description:
+        "Custom software development, mobile apps, business automation, and startup consulting by Riyajul Saha.",
+      url: "https://riyajulsaha.is-a.dev/services/software-developer",
+      image: `${SEO_CONFIG.url}assets/open-graph-social-share-banner.webp`,
+      provider: {
+        "@id": `${SEO_CONFIG.url}#person`,
+      },
+      areaServed: ["India", "Global", "United States"],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SEO_CONFIG.url}services/web-developer#service`,
+      name: "Web Developer and Web Application",
+      description:
+        "Custom web application development, SaaS platforms, Python Flask, Node.js, and responsive business portals by Riyajul Saha.",
+      url: "https://riyajulsaha.is-a.dev/services/web-developer",
+      image: `${SEO_CONFIG.url}assets/open-graph-social-share-banner.webp`,
+      provider: {
+        "@id": `${SEO_CONFIG.url}#person`,
+      },
+      areaServed: ["India", "Global", "United States"],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SEO_CONFIG.url}services/ai-agent-builder#service`,
+      name: "AI Agent Builder and AI Development",
+      description:
+        "Custom AI agent development, multi-LLM workflows, computer vision, and intelligent business automation by Riyajul Saha.",
+      url: "https://riyajulsaha.is-a.dev/services/ai-agent-builder",
+      image: `${SEO_CONFIG.url}assets/open-graph-social-share-banner.webp`,
+      provider: {
+        "@id": `${SEO_CONFIG.url}#person`,
+      },
+      areaServed: ["India", "Global", "United States"],
     },
   ],
 };

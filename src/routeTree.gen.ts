@@ -14,6 +14,9 @@ import { Route as ProjectsCrophealAiRouteImport } from './routes/projects/crophe
 import { Route as ProjectsFarmyRouteImport } from './routes/projects/farmy'
 import { Route as ProjectsFarmyosRouteImport } from './routes/projects/farmyos'
 import { Route as ProjectsGramTarakkiFoundationRouteImport } from './routes/projects/gram-tarakki-foundation'
+import { Route as ServicesAiAgentBuilderRouteImport } from './routes/services/ai-agent-builder'
+import { Route as ServicesSoftwareDeveloperRouteImport } from './routes/services/software-developer'
+import { Route as ServicesWebDeveloperRouteImport } from './routes/services/web-developer'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -41,6 +44,22 @@ const ProjectsGramTarakkiFoundationRoute =
     path: '/projects/gram-tarakki-foundation',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesAiAgentBuilderRoute = ServicesAiAgentBuilderRouteImport.update({
+  id: '/services/ai-agent-builder',
+  path: '/services/ai-agent-builder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSoftwareDeveloperRoute =
+  ServicesSoftwareDeveloperRouteImport.update({
+    id: '/services/software-developer',
+    path: '/services/software-developer',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesWebDeveloperRoute = ServicesWebDeveloperRouteImport.update({
+  id: '/services/web-developer',
+  path: '/services/web-developer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -48,6 +67,9 @@ export interface FileRoutesByFullPath {
   '/projects/farmy': typeof ProjectsFarmyRoute
   '/projects/farmyos': typeof ProjectsFarmyosRoute
   '/projects/gram-tarakki-foundation': typeof ProjectsGramTarakkiFoundationRoute
+  '/services/ai-agent-builder': typeof ServicesAiAgentBuilderRoute
+  '/services/software-developer': typeof ServicesSoftwareDeveloperRoute
+  '/services/web-developer': typeof ServicesWebDeveloperRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -55,6 +77,9 @@ export interface FileRoutesByTo {
   '/projects/farmy': typeof ProjectsFarmyRoute
   '/projects/farmyos': typeof ProjectsFarmyosRoute
   '/projects/gram-tarakki-foundation': typeof ProjectsGramTarakkiFoundationRoute
+  '/services/ai-agent-builder': typeof ServicesAiAgentBuilderRoute
+  '/services/software-developer': typeof ServicesSoftwareDeveloperRoute
+  '/services/web-developer': typeof ServicesWebDeveloperRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -63,6 +88,9 @@ export interface FileRoutesById {
   '/projects/farmy': typeof ProjectsFarmyRoute
   '/projects/farmyos': typeof ProjectsFarmyosRoute
   '/projects/gram-tarakki-foundation': typeof ProjectsGramTarakkiFoundationRoute
+  '/services/ai-agent-builder': typeof ServicesAiAgentBuilderRoute
+  '/services/software-developer': typeof ServicesSoftwareDeveloperRoute
+  '/services/web-developer': typeof ServicesWebDeveloperRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -72,6 +100,9 @@ export interface FileRouteTypes {
     | '/projects/farmy'
     | '/projects/farmyos'
     | '/projects/gram-tarakki-foundation'
+    | '/services/ai-agent-builder'
+    | '/services/software-developer'
+    | '/services/web-developer'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -79,6 +110,9 @@ export interface FileRouteTypes {
     | '/projects/farmy'
     | '/projects/farmyos'
     | '/projects/gram-tarakki-foundation'
+    | '/services/ai-agent-builder'
+    | '/services/software-developer'
+    | '/services/web-developer'
   id:
     | '__root__'
     | '/'
@@ -86,6 +120,9 @@ export interface FileRouteTypes {
     | '/projects/farmy'
     | '/projects/farmyos'
     | '/projects/gram-tarakki-foundation'
+    | '/services/ai-agent-builder'
+    | '/services/software-developer'
+    | '/services/web-developer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,6 +131,9 @@ export interface RootRouteChildren {
   ProjectsFarmyRoute: typeof ProjectsFarmyRoute
   ProjectsFarmyosRoute: typeof ProjectsFarmyosRoute
   ProjectsGramTarakkiFoundationRoute: typeof ProjectsGramTarakkiFoundationRoute
+  ServicesAiAgentBuilderRoute: typeof ServicesAiAgentBuilderRoute
+  ServicesSoftwareDeveloperRoute: typeof ServicesSoftwareDeveloperRoute
+  ServicesWebDeveloperRoute: typeof ServicesWebDeveloperRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -133,6 +173,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsGramTarakkiFoundationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/ai-agent-builder': {
+      id: '/services/ai-agent-builder'
+      path: '/services/ai-agent-builder'
+      fullPath: '/services/ai-agent-builder'
+      preLoaderRoute: typeof ServicesAiAgentBuilderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/software-developer': {
+      id: '/services/software-developer'
+      path: '/services/software-developer'
+      fullPath: '/services/software-developer'
+      preLoaderRoute: typeof ServicesSoftwareDeveloperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/web-developer': {
+      id: '/services/web-developer'
+      path: '/services/web-developer'
+      fullPath: '/services/web-developer'
+      preLoaderRoute: typeof ServicesWebDeveloperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -142,6 +203,9 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsFarmyRoute: ProjectsFarmyRoute,
   ProjectsFarmyosRoute: ProjectsFarmyosRoute,
   ProjectsGramTarakkiFoundationRoute: ProjectsGramTarakkiFoundationRoute,
+  ServicesAiAgentBuilderRoute: ServicesAiAgentBuilderRoute,
+  ServicesSoftwareDeveloperRoute: ServicesSoftwareDeveloperRoute,
+  ServicesWebDeveloperRoute: ServicesWebDeveloperRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
