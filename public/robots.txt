@@ -20,6 +20,9 @@ Allow: /
 User-agent: *
 Allow: /
 
+User-agent: BraveBot
+Allow: /
+
 # Sitemap & Host
 Sitemap: https://riyajulsaha.is-a.dev/sitemap.xml
 Host: https://riyajulsaha.is-a.dev
