@@ -1587,4 +1587,4 @@ export function getAllServices(): ServiceData[] {
 export function getServiceKeywords(slug: string): string[] {
   const service = getServiceBySlug(slug);
   return service?.seo.keywords || [];
-}
+} 
