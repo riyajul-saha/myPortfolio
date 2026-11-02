@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
+import { QuickAnswers } from "@/components/site/QuickAnswers";
 import { WhatIDo } from "@/components/site/WhatIDo";
 import { Skills } from "@/components/site/Skills";
 import { Experience } from "@/components/site/Experience";
@@ -9,7 +10,7 @@ import { Projects } from "@/components/site/Projects";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 
-import { SEO_CONFIG } from "@/lib/seo";
+import { SEO_CONFIG, getHomepageStructuredData } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,6 +32,12 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image:alt", content: SEO_CONFIG.ogImage.alt },
     ],
     links: [{ rel: "canonical", href: SEO_CONFIG.url }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getHomepageStructuredData()),
+      },
+    ],
   }),
 
   component: Index,
@@ -40,9 +47,10 @@ function Index() {
   return (
     <div className="min-h-screen bg-background overflow-x-clip w-full max-w-full relative">
       <Navbar />
-      <main className="overflow-x-clip w-full max-w-full relative">
+      <main id="main-content" className="overflow-x-clip w-full max-w-full relative">
         <Hero />
         <About />
+        <QuickAnswers />
         <WhatIDo />
         <Skills />
         <Experience />

@@ -158,7 +158,9 @@ export function Contact() {
                 <span className="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-primary/15 text-primary">
                   <Check className="h-5 w-5 sm:h-6 sm:w-6" />
                 </span>
-                <h3 className="text-lg sm:text-xl font-semibold">Message sent successfully!</h3>
+                <h3 id="message-sent-successfully" className="text-lg sm:text-xl font-semibold">
+                  Message sent successfully!
+                </h3>
                 <p className="text-sm text-muted-foreground">
                   Thanks for reaching out! Your message has been sent directly to my inbox — I'll
                   get back to you shortly.
@@ -180,14 +182,9 @@ export function Contact() {
                 className="space-y-4 sm:space-y-5"
               >
                 {/* Honeypot for spam bot mitigation */}
-                <input
-                  type="checkbox"
-                  name="botcheck"
-                  className="hidden"
-                  style={{ display: "none" }}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
+                <div hidden aria-hidden="true">
+                  <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" />
+                </div>
 
                 {/* Server / Network Error Alert */}
                 {status === "error" && errorMessage && (

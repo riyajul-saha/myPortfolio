@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProjectsCrophealAiRouteImport } from './routes/projects/cropheal-ai'
 import { Route as ProjectsFarmyRouteImport } from './routes/projects/farmy'
 import { Route as ProjectsFarmyosRouteImport } from './routes/projects/farmyos'
@@ -21,6 +22,11 @@ import { Route as ServicesWebDeveloperRouteImport } from './routes/services/web-
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsCrophealAiRoute = ProjectsCrophealAiRouteImport.update({
@@ -63,6 +69,7 @@ const ServicesWebDeveloperRoute = ServicesWebDeveloperRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/privacy': typeof PrivacyRoute
   '/projects/cropheal-ai': typeof ProjectsCrophealAiRoute
   '/projects/farmy': typeof ProjectsFarmyRoute
   '/projects/farmyos': typeof ProjectsFarmyosRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/privacy': typeof PrivacyRoute
   '/projects/cropheal-ai': typeof ProjectsCrophealAiRoute
   '/projects/farmy': typeof ProjectsFarmyRoute
   '/projects/farmyos': typeof ProjectsFarmyosRoute
@@ -84,6 +92,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/privacy': typeof PrivacyRoute
   '/projects/cropheal-ai': typeof ProjectsCrophealAiRoute
   '/projects/farmy': typeof ProjectsFarmyRoute
   '/projects/farmyos': typeof ProjectsFarmyosRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/privacy'
     | '/projects/cropheal-ai'
     | '/projects/farmy'
     | '/projects/farmyos'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/privacy'
     | '/projects/cropheal-ai'
     | '/projects/farmy'
     | '/projects/farmyos'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/privacy'
     | '/projects/cropheal-ai'
     | '/projects/farmy'
     | '/projects/farmyos'
@@ -127,6 +139,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProjectsCrophealAiRoute: typeof ProjectsCrophealAiRoute
   ProjectsFarmyRoute: typeof ProjectsFarmyRoute
   ProjectsFarmyosRoute: typeof ProjectsFarmyosRoute
@@ -143,6 +156,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects/cropheal-ai': {
@@ -199,6 +219,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrivacyRoute: PrivacyRoute,
   ProjectsCrophealAiRoute: ProjectsCrophealAiRoute,
   ProjectsFarmyRoute: ProjectsFarmyRoute,
   ProjectsFarmyosRoute: ProjectsFarmyosRoute,

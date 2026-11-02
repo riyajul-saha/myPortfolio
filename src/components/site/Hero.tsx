@@ -87,7 +87,7 @@ export function Hero() {
                 <span className="block text-sm sm:text-base lg:text-lg font-semibold text-primary mb-2.5 tracking-normal">
                   Hi, I'm {profile.name} —{" "}
                   <span className="text-foreground/90 font-medium">{profile.role}</span>
-                </span>
+                </span>{" "}
                 I build modern web &amp; mobile applications with{" "}
                 <span className="accent-gradient-text">clean UI</span> and scalable systems.
               </h1>

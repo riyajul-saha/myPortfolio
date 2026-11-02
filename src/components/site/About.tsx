@@ -14,6 +14,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { aboutData, profile } from "@/data/portfolio";
+import { slugify } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const domainIcons = {
@@ -47,7 +48,7 @@ export function About() {
         id="about-heading"
         label={aboutData.heading}
         title="Building practical digital products from idea to production"
-        subtitle="Computer Science student & developer bridging intuitive user interfaces with robust backend architectures."
+        subtitle="Computer Science student & Software Developer bridging intuitive user interfaces with robust backend architectures."
       />
 
       <div className="mt-10 sm:mt-12 grid gap-6 sm:gap-8 lg:grid-cols-12 lg:items-start">
@@ -58,7 +59,7 @@ export function About() {
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] sm:text-xs font-semibold text-primary">
                 <GraduationCap className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                Computer Science Student &amp; Developer
+                Computer Science Student &amp; Software Developer
               </span>
               <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
@@ -108,7 +109,10 @@ export function About() {
                   <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </span>
                 <div>
-                  <h3 className="text-xs sm:text-sm font-semibold text-foreground">
+                  <h3
+                    id="concept-architecture-integration-polish"
+                    className="text-xs sm:text-sm font-semibold text-foreground"
+                  >
                     Concept ➔ Architecture ➔ Integration ➔ Polish
                   </h3>
                   <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
@@ -179,7 +183,10 @@ export function About() {
                           </span>
                           <div className="min-w-0">
                             <div className="flex items-center gap-2">
-                              <h3 className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                              <h3
+                                id={slugify(`highlight-${h.title}`)}
+                                className="text-xs sm:text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate"
+                              >
                                 {h.title}
                               </h3>
                             </div>
@@ -203,7 +210,10 @@ export function About() {
           {/* Core Pillars / Mindset */}
           <Reveal delay={200}>
             <div className="rounded-2xl sm:rounded-3xl border border-border bg-surface/80 p-4 sm:p-6 backdrop-blur-md">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              <h3
+                id="core-principles"
+                className="text-xs font-bold uppercase tracking-wider text-muted-foreground"
+              >
                 Core Principles
               </h3>
               <ul className="mt-3 sm:mt-4 space-y-3 sm:space-y-3.5">

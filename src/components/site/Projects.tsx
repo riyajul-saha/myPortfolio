@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { projectFilters, projects, type Project } from "@/data/portfolio";
-import { cn } from "@/lib/utils";
+import { cn, slugify } from "@/lib/utils";
 import { ProjectLinks } from "./ProjectLinks";
 import { ProjectModal } from "./ProjectModal";
 import { Reveal, SectionHeading } from "./Reveal";
@@ -58,7 +58,12 @@ export function Projects() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight">{featured.name}</h3>
+                  <h3
+                    id={slugify(`featured-project-${featured.name}`)}
+                    className="text-xl sm:text-2xl font-bold tracking-tight"
+                  >
+                    {featured.name}
+                  </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
                     {featured.category}
                   </p>
@@ -145,7 +150,12 @@ export function Projects() {
               <div className="flex flex-1 flex-col gap-2.5 sm:gap-3 p-4 sm:p-6">
                 <div className="flex items-start justify-between gap-2 sm:gap-3">
                   <div>
-                    <h3 className="text-base sm:text-lg font-semibold">{p.name}</h3>
+                    <h3
+                      id={slugify(`project-${p.name}`)}
+                      className="text-base sm:text-lg font-semibold"
+                    >
+                      {p.name}
+                    </h3>
                     <p className="text-[11px] sm:text-xs text-muted-foreground">{p.category}</p>
                   </div>
                   <span className="shrink-0 rounded-full border border-border bg-surface-2 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] font-bold uppercase tracking-widest text-primary">

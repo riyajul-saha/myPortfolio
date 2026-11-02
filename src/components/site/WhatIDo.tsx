@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Brain, Globe, Server, Smartphone } from "lucide-react";
 import { capabilities } from "@/data/portfolio";
+import { slugify } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const icons = {
@@ -50,7 +51,10 @@ export function WhatIDo() {
                       {c.index}
                     </span>
                   </div>
-                  <h3 className="mt-4 sm:mt-6 text-base sm:text-lg font-semibold group-hover:text-primary transition-colors">
+                  <h3
+                    id={slugify(`capability-${c.title}`)}
+                    className="mt-4 sm:mt-6 text-base sm:text-lg font-semibold group-hover:text-primary transition-colors"
+                  >
                     {c.title}
                   </h3>
                   <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">

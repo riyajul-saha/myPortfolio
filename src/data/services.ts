@@ -23,16 +23,16 @@ export type ServiceOfferingItem = {
   deliverables: string[];
   technologies: string[];
   icon:
-  | "code"
-  | "mobile"
-  | "database"
-  | "api"
-  | "cloud"
-  | "bot"
-  | "brain"
-  | "globe"
-  | "shield"
-  | "workflow";
+    | "code"
+    | "mobile"
+    | "database"
+    | "api"
+    | "cloud"
+    | "bot"
+    | "brain"
+    | "globe"
+    | "shield"
+    | "workflow";
 };
 
 export type ProblemUseCaseItem = {
@@ -290,7 +290,8 @@ export const servicesData: Record<ServiceSlug, ServiceData> = {
             "Engineered unified operational ecosystems (such as FarmyOS) that synchronize customer apps and field staff devices with a real-time PostgreSQL backend.",
           businessOutcome:
             "Eliminated manual double-entry, reduced order processing errors by 90%, and gave leadership instant visibility into live operations.",
-          targetAudience: "Small-to-medium enterprises (SMEs), retail operators, logistics startups",
+          targetAudience:
+            "Small-to-medium enterprises (SMEs), retail operators, logistics startups",
         },
         {
           problemTitle: "Prohibitive Agency Quotations & Communication Bottlenecks",
@@ -1587,4 +1588,4 @@ export function getAllServices(): ServiceData[] {
 export function getServiceKeywords(slug: string): string[] {
   const service = getServiceBySlug(slug);
   return service?.seo.keywords || [];
-} 
+}

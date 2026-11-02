@@ -1,6 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getProjectBySlug } from "@/data/portfolio";
 import { ProjectDetailView } from "@/components/site/ProjectDetailView";
+import { getStandaloneProjectSchema, getBreadcrumbSchema, SEO_CONFIG } from "@/lib/seo";
 
 const project = getProjectBySlug("cropheal-ai")!;
 const title = "CropHeal AI — Plant Disease Vision System | Riyajul Saha";
@@ -9,21 +10,11 @@ const description =
 const url = "https://riyajulsaha.is-a.dev/projects/cropheal-ai";
 const image = "https://riyajulsaha.is-a.dev/assets/CropHeal-AI-Banner.webp";
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "CropHeal AI",
-  description: project.description,
-  url,
-  image,
-  applicationCategory: "HealthApplication",
-  operatingSystem: "Web",
-  author: {
-    "@type": "Person",
-    name: "Riyajul Saha",
-    url: "https://riyajulsaha.is-a.dev/",
-  },
-};
+const schema = getStandaloneProjectSchema("cropheal-ai");
+const breadcrumb = getBreadcrumbSchema([
+  { name: "Portfolio", url: SEO_CONFIG.url },
+  { name: "CropHeal AI", url },
+]);
 
 export const Route = createFileRoute("/projects/cropheal-ai")({
   head: () => ({
@@ -48,6 +39,10 @@ export const Route = createFileRoute("/projects/cropheal-ai")({
       {
         type: "application/ld+json",
         children: JSON.stringify(schema),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumb),
       },
     ],
   }),

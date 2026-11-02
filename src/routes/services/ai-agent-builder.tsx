@@ -1,45 +1,16 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getServiceBySlug } from "@/data/services";
 import { ServiceDetailView } from "@/components/site/ServiceDetailView";
+import { getStandaloneServiceSchema, getBreadcrumbSchema, SEO_CONFIG } from "@/lib/seo";
 
 const service = getServiceBySlug("ai-agent-builder")!;
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: service.title,
-  description: service.seo.metaDescription,
-  url: service.seo.canonicalUrl,
-  image: service.seo.ogImage,
-  address: {
-    "@type": "PostalAddress",
-    addressRegion: "West Bengal",
-    addressCountry: "IN",
-  },
-  provider: {
-    "@type": "Person",
-    name: "Riyajul Saha",
-    url: "https://riyajulsaha.is-a.dev/",
-  },
-  areaServed: [
-    { "@type": "Country", name: "India" },
-    { "@type": "AdministrativeArea", name: "West Bengal" },
-    { "@type": "Country", name: "United States" },
-    { "@type": "Country", name: "Global" },
-  ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: service.title,
-    itemListElement: service.servicesIOffer.services.map((item) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: item.title,
-        description: item.summary,
-      },
-    })),
-  },
-};
+const serviceSchema = getStandaloneServiceSchema("ai-agent-builder");
+
+const breadcrumb = getBreadcrumbSchema([
+  { name: "Home", url: SEO_CONFIG.url },
+  { name: service.title, url: service.seo.canonicalUrl },
+]);
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -83,12 +54,16 @@ export const Route = createFileRoute("/services/ai-agent-builder")({
         type: "application/ld+json",
         children: JSON.stringify(faqSchema),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumb),
+      },
     ],
   }),
-  component: AiAgentBuilderPage,
+  component: AIAgentBuilderPage,
 });
 
-function AiAgentBuilderPage() {
+function AIAgentBuilderPage() {
   if (!service) throw notFound();
   return <ServiceDetailView service={service} />;
 }

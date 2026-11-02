@@ -90,7 +90,10 @@ export function ServiceDetailView({ service }: { service: ServiceData }) {
         </nav>
       </header>
 
-      <main className="relative mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 space-y-16 sm:space-y-24">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 space-y-16 sm:space-y-24"
+      >
         {/* ========================================================================= */}
         {/* 1. HERO SECTION: Real Service and Need of Client (H1) + Introduction */}
         {/* ========================================================================= */}

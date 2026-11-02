@@ -1,0 +1,181 @@
+# Riyajul Saha — Software Developer (Full Technical Dossier)
+
+> Author: Riyajul Saha  
+> Role: Software Developer & Computer Science Student  
+> Location: West Bengal, India  
+> Status: Available for freelance contracts, technical consulting, and software engineering opportunities  
+> Contact: riyajsaha879@gmail.com  
+> Canonical URL: https://riyajulsaha.is-a.dev/  
+> Last Updated: 2026-11-02  
+
+---
+
+## 1. Executive Summary
+
+Riyajul Saha is a software developer and Computer Science student based in West Bengal, India. He builds practical, production-ready digital products spanning full-stack web applications, cross-platform mobile apps, backend API systems, and applied machine learning models. His development approach emphasizes clean, responsive user interfaces directly connected to scalable, resilient backend services and database architectures.
+
+Key areas of expertise:
+- **Full-Stack Web Development**: Modern responsive interfaces, single-page applications, and server-rendered portals using React, Node.js, and Python Flask.
+- **Cross-Platform Mobile Apps**: Native-feel Android and multi-platform applications using React Native and Expo with cloud backend integrations.
+- **Backend Architecture & APIs**: RESTful API design, relational and document database modeling (PostgreSQL, MySQL, Supabase, MongoDB), and secure authentication workflows (Argon2, JWT).
+- **Applied Machine Learning & AI**: Computer vision classification models (ResNet50, OpenCV, TensorFlow) and autonomous multi-LLM diagnostic and reasoning pipelines (Gemini, Groq, DeepSeek).
+
+---
+
+## 2. Technical Skills Taxonomy
+
+### 2.1 Programming Languages
+- **Python**: Applied machine learning, backend REST services with Flask, automation scripts, and data processing.
+- **JavaScript**: Full-stack web development, React single-page applications, Node.js/Express APIs, and React Native apps.
+- **Java**: Object-oriented programming, core software concepts, and native Android application development.
+- **C**: Systems programming, memory management, and data structures & algorithms.
+- **C++**: High-performance algorithm design, object-oriented software, and competitive programming.
+
+### 2.2 Web Technologies & Frameworks
+- **React**: Declarative component architectures, responsive user interfaces, custom hooks, and state management.
+- **Node.js**: Scalable server runtimes, event-driven backends, and microservice architectures.
+- **Flask (Python)**: Lightweight RESTful microservices, machine learning model serving, and database routing.
+- **HTML & CSS**: Semantic markup, accessible DOM hierarchies, and modern styling systems (Tailwind CSS).
+- **REST APIs**: Structured JSON endpoints, HTTP protocol compliance, role-based authorization, and mobile integration.
+
+### 2.3 Mobile Development
+- **React Native**: Component-based cross-platform mobile applications sharing business logic across operating systems.
+- **Expo**: Accelerated mobile toolchains, native device capability bridges, and Over-The-Air (OTA) distribution workflows.
+- **Android**: Application packaging, native asset bundling, and release APK building for mobile distribution.
+
+### 2.4 Databases & Backend Systems
+- **PostgreSQL**: Production-grade relational database design, foreign key constraints, indexing, and complex queries.
+- **MySQL**: Relational database architecture, normalized schemas, and administrative query processing.
+- **Supabase**: Managed backend infrastructure providing PostgreSQL, real-time subscriptions, secure auth, and storage.
+- **MongoDB**: Document-oriented data storage for flexible schema architectures.
+
+### 2.5 Applied AI & Machine Learning
+- **TensorFlow**: Deep learning neural network training, inference pipelines, and model evaluation.
+- **OpenCV**: Image preprocessing, feature extraction, edge detection, and visual normalization for vision pipelines.
+- **ResNet50**: Deep residual convolutional networks applied to real-world visual leaf disease identification.
+- **Multi-LLM Integration**: Prompt engineering and orchestration across Google Gemini, Groq, and DeepSeek models.
+- **Scientific Python (NumPy, Pandas, Scikit-learn)**: Numerical computation, data wrangling, and classical machine learning algorithms.
+
+### 2.6 DevOps & Development Tools
+- **Git & GitHub**: Version control, branching workflows, collaborative code reviews, and CI/CD automation.
+- **Docker**: Containerization for reproducible development and server deployment environments.
+- **Linux**: Server administration, shell scripting, and command-line execution workflows.
+- **Hosting Platforms**: Vercel (frontend and edge deployments), Render (backend service hosting), Hugging Face Spaces (ML model hosting).
+- **Tooling**: VS Code, Jupyter Notebooks, Google Colab (GPU computing), and Kaggle.
+
+---
+
+## 3. Flagship Projects In-Depth
+
+### 3.1 Farmy — Fruit E-Commerce & Delivery Mobile Platform
+- **Type**: Full Stack Mobile & Web Application
+- **Live Demo**: https://farmyy-sigma.vercel.app/
+- **Documentation Route**: https://riyajulsaha.is-a.dev/projects/farmy
+- **Primary Technologies**: React Native, Expo, Node.js, Express.js, Supabase, PostgreSQL, Cloudinary, Argon2, REST API.
+- **Architecture**:
+  - Client tier: Mobile-first interface built with React Native and Expo delivering responsive browsing and smooth cart transitions.
+  - API tier: Node.js and Express.js REST APIs enforcing validation, session integrity, and order calculations.
+  - Persistence tier: Relational PostgreSQL database managed via Supabase, enforcing referential integrity for product catalogs, user accounts, and purchase orders.
+  - Media tier: Cloudinary integration for scalable cloud storage and dynamic optimization of high-resolution fruit images.
+  - Security tier: Argon2 cryptographic password hashing ensuring robust protection of user credentials.
+- **Key Features**:
+  - Dedicated product catalog categorized by fruit varieties with transparent pricing and promotional offers.
+  - Interactive shopping cart and persistent user wishlist functionality.
+  - Secure user authentication and personal profile management.
+  - Streamlined order placement, order status tracking, and delivery dispatch workflows.
+
+### 3.2 FarmyOS — Operations & Administration Platform
+- **Type**: Cross-Platform Operations Management System
+- **Live Demo**: https://farmyy-os.vercel.app/
+- **Documentation Route**: https://riyajulsaha.is-a.dev/projects/farmyos
+- **Primary Technologies**: React Native, Expo, Node.js, Express.js, Supabase, PostgreSQL, Cloudinary, JWT, REST API.
+- **Architecture**:
+  - Centralized administrative command center coordinating fruit inventory, customer orders, and field fulfillment.
+  - Role-based access control protecting administrative workflows and inventory modification permissions.
+  - Structured modular design separating order lifecycle management, delivery assignment, and catalog updates.
+- **Key Features**:
+  - Inventory management for fruit listings, real-time stock levels, pricing updates, and promotional discounts.
+  - Order coordination dashboard tracking customer orders through processing, packing, and fulfillment stages.
+  - Delivery dispatch interface assigning logistics coordinators and monitoring delivery milestones.
+  - Staff coordination tools managing operational roles and team activity logs.
+
+### 3.3 CropHeal AI — Plant Disease Vision & Multi-LLM System
+- **Type**: Computer Vision & Multi-LLM Healthcare Platform
+- **Live Demo**: https://huggingface.co/spaces/trio-rds-tensors/CropHeal-AI
+- **Documentation Route**: https://riyajulsaha.is-a.dev/projects/cropheal-ai
+- **Primary Technologies**: Python, Flask, ResNet50, TensorFlow, OpenCV, Google Gemini, Groq, DeepSeek, Hugging Face Spaces.
+- **Architecture**:
+  - Vision Pipeline: Preprocessed leaf photographs are processed through OpenCV and evaluated by a trained ResNet50 convolutional neural network to classify plant pathologies (e.g., Rice Hispa, Rice Neck Blast, and foliar infections).
+  - Diagnostic Engine: Multi-LLM advisory workflow integrating Google Gemini, Groq, and DeepSeek to analyze classification outputs and synthesize actionable, localized treatment recommendations.
+  - Serving Tier: Streamlined Python Flask web application deployed on Hugging Face Spaces ensuring rapid inference and low-latency diagnostic generation.
+- **Key Features**:
+  - Instant leaf disease identification from camera uploads or stored agricultural images.
+  - Curative action plans detailing both organic and chemical remediation measures with exact dosage specifications.
+  - Preventative agronomic guidance helping farmers prevent future disease outbreaks and optimize crop yield.
+
+### 3.4 Gram Tarakki Foundation — Non-Profit Digital Platform
+- **Type**: Non-Profit Web Platform & Content Management
+- **Live Website**: https://gramtarakkifoundation.org/
+- **Documentation Route**: https://riyajulsaha.is-a.dev/projects/gram-tarakki-foundation
+- **Primary Technologies**: Python, Flask, MySQL, HTML5, CSS3, JavaScript, Razorpay, REST APIs.
+- **Architecture**:
+  - Modular server-rendered web application built with Python Flask providing public community information and volunteer engagement tools.
+  - Administrative control panel enabling staff to publish organizational news, update social programs, and review volunteer applications.
+  - Persistent MySQL database storing structured records for programs, volunteers, credentials, and donation receipts.
+  - Integrated payment gateway via Razorpay handling secure digital contributions.
+- **Key Features**:
+  - Organizational initiative showcases covering community welfare, karate training, and yoga programs.
+  - Inbound volunteer registration workflow supporting resume and credential document uploads.
+  - Digital certificate verification system enabling employers and institutions to authenticate student accomplishments.
+  - Secure donation workflows with instantaneous receipt generation and payment tracking.
+
+---
+
+## 4. Professional Engineering Services
+
+### 4.1 Custom Software & Mobile App Development
+- **Service Route**: https://riyajulsaha.is-a.dev/services/software-developer
+- **Scope**: End-to-end custom application development, cross-platform mobile apps for Android and iOS, backend API architecture, and startup MVP builds.
+- **Deliverables**: Production-grade mobile apps, secure RESTful APIs, optimized database schemas, cloud infrastructure setup, and automated CI/CD pipelines.
+
+### 4.2 Web Application & SaaS Development
+- **Service Route**: https://riyajulsaha.is-a.dev/services/web-developer
+- **Scope**: Scalable full-stack web applications, business management portals, client dashboards, and SaaS platforms.
+- **Deliverables**: Responsive frontends (React), resilient backend microservices (Node.js, Flask), normalized relational databases (PostgreSQL, MySQL), authentication workflows, and deployment automation.
+
+### 4.3 Autonomous AI Agent & ML Engineering
+- **Service Route**: https://riyajulsaha.is-a.dev/services/ai-agent-builder
+- **Scope**: Custom AI agent development, multi-LLM reasoning pipelines, computer vision models, and intelligent business process automation.
+- **Deliverables**: Multi-LLM orchestration pipelines, automated data extraction workflows, computer vision inference services, and customized agent tool-calling frameworks.
+
+---
+
+## 5. Verified Frequently Asked Questions (Q&A)
+
+### Q: Who is Riyajul Saha?
+**A**: Riyajul Saha is a Computer Science student and software developer based in West Bengal, India. He builds practical, production-ready digital products spanning full-stack web applications, cross-platform mobile apps, backend systems, and applied machine learning, focusing on clean user interfaces connected to reliable backend services.
+
+### Q: What does Riyajul Saha build?
+**A**: Riyajul Saha is a developer who builds full-stack web applications, cross-platform mobile applications, backend APIs, and applied machine learning systems. His work ranges from fruit commerce platforms and operational portals to AI-driven crop disease diagnostics and non-profit community websites, managing products end-to-end from conception to production deployment.
+
+### Q: Which technologies does Riyajul Saha use?
+**A**: Riyajul Saha is a software developer proficient in Python, JavaScript, Java, C, and C++. His core development stack includes React, React Native, Expo, Node.js, Flask, PostgreSQL, MySQL, Supabase, and MongoDB, alongside applied machine learning libraries such as TensorFlow, OpenCV, Scikit-learn, Pandas, and NumPy for intelligent software solutions.
+
+### Q: Which projects has Riyajul Saha built?
+**A**: Riyajul Saha is the creator of several digital products: Farmy, a fruit e-commerce mobile platform; FarmyOS, a centralized administration and operations system; CropHeal AI, an intelligent crop disease diagnosis application powered by computer vision; and the official web platform for Gram Tarakki Foundation powering social initiatives.
+
+### Q: Is Riyajul Saha available for freelance or contract work?
+**A**: Riyajul Saha is currently available for freelance projects, technical consulting, and software development opportunities. He works with startups, businesses, and organizations worldwide to design and deliver custom web applications, cross-platform mobile apps, business automation tools, and machine learning integrations with direct communication and rapid delivery.
+
+### Q: How can you contact Riyajul Saha?
+**A**: Riyajul Saha is reachable by email at riyajsaha879@gmail.com for project inquiries, freelance contracts, or technical collaboration. You can also connect with him through his official GitHub profile at github.com/riyajul-saha or message him on LinkedIn to discuss software engineering opportunities and new product development.
+
+---
+
+## 6. Privacy & Communication Policies
+
+- **Contact Form Privacy**: Inquiries submitted through the portfolio contact form collect strictly the user's name, email address, and message.
+- **Transmission Mechanism**: Form submissions are securely delivered via the Web3Forms API to riyajsaha879@gmail.com.
+- **Data Protection**: Information provided is used exclusively to respond to proposals and business inquiries; details are never sold, rented, or shared with third-party advertising networks.
+- **Privacy Policy Route**: https://riyajulsaha.is-a.dev/privacy
+

@@ -1,6 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getProjectBySlug } from "@/data/portfolio";
 import { ProjectDetailView } from "@/components/site/ProjectDetailView";
+import { getStandaloneProjectSchema, getBreadcrumbSchema, SEO_CONFIG } from "@/lib/seo";
 
 const project = getProjectBySlug("gram-tarakki-foundation")!;
 const title = "Gram Tarakki Foundation Web Platform | Riyajul Saha";
@@ -9,19 +10,11 @@ const description =
 const url = "https://riyajulsaha.is-a.dev/projects/gram-tarakki-foundation";
 const image = "https://riyajulsaha.is-a.dev/assets/GTFoundation-Banner.webp";
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  name: "Gram Tarakki Foundation Web Platform",
-  description: project.description,
-  url,
-  image,
-  author: {
-    "@type": "Person",
-    name: "Riyajul Saha",
-    url: "https://riyajulsaha.is-a.dev/",
-  },
-};
+const schema = getStandaloneProjectSchema("gram-tarakki-foundation");
+const breadcrumb = getBreadcrumbSchema([
+  { name: "Portfolio", url: SEO_CONFIG.url },
+  { name: "Gram Tarakki Foundation Web Platform", url },
+]);
 
 export const Route = createFileRoute("/projects/gram-tarakki-foundation")({
   head: () => ({
@@ -49,6 +42,10 @@ export const Route = createFileRoute("/projects/gram-tarakki-foundation")({
       {
         type: "application/ld+json",
         children: JSON.stringify(schema),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumb),
       },
     ],
   }),

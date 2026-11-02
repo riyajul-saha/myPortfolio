@@ -1,0 +1,32 @@
+# Riyajul Saha — Software Developer
+
+> Riyajul Saha is a Computer Science student and software developer based in West Bengal, India. He builds practical, production-ready digital products spanning full-stack web applications, cross-platform mobile apps, backend systems, and applied machine learning. He is currently available for freelance projects, technical consulting, and software engineering opportunities.
+
+This file provides a structured index of site resources for Large Language Models (LLMs) and autonomous AI agents. For the complete in-depth technical dossier including full project architectures, complete skills taxonomy, and deliverable specifications, see [llms-full.txt](https://riyajulsaha.is-a.dev/llms-full.txt).
+
+## Core Pages
+
+- [Homepage](https://riyajulsaha.is-a.dev/): Primary developer portfolio featuring introduction, skills overview, featured projects, experience, FAQs, and contact form.
+- [Full Technical Dossier (llms-full.txt)](https://riyajulsaha.is-a.dev/llms-full.txt): Comprehensive technical breakdown with architectural specifications, full skills taxonomy, and deep project details.
+- [Privacy Policy](https://riyajulsaha.is-a.dev/privacy): Data handling practices for the contact form, transmission through Web3Forms, and privacy inquiry channels.
+
+## Engineering Services
+
+- [Software & App Development](https://riyajulsaha.is-a.dev/services/software-developer): Custom software engineering, cross-platform React Native & Expo mobile applications, Node.js REST APIs, database architecture, and startup MVP development.
+- [Web & SaaS Development](https://riyajulsaha.is-a.dev/services/web-developer): Full-stack web application development, responsive business portals, Python Flask and Node.js backends, database integrations, and SaaS architectures.
+- [AI Agent Builder](https://riyajulsaha.is-a.dev/services/ai-agent-builder): Autonomous AI agents, custom multi-LLM reasoning workflows (Gemini, Groq, DeepSeek), computer vision models, and intelligent business process automation.
+
+## Featured Projects
+
+- [Farmy](https://riyajulsaha.is-a.dev/projects/farmy): Full-stack fruit e-commerce mobile application built with React Native, Expo, Node.js, Express, and PostgreSQL (Supabase) featuring product browsing, cart, and order placement.
+- [FarmyOS](https://riyajulsaha.is-a.dev/projects/farmyos): Centralized administration and operations mobile system coordinating fruit listings, customer orders, delivery logistics, and staff operations.
+- [CropHeal AI](https://riyajulsaha.is-a.dev/projects/cropheal-ai): Intelligent plant leaf disease diagnostic platform powered by a ResNet50 computer vision model and a multi-LLM advisory engine.
+- [Gram Tarakki Foundation](https://riyajulsaha.is-a.dev/projects/gram-tarakki-foundation): Official digital platform for a community non-profit organization featuring initiative showcases, volunteer onboarding, credential verification, and Razorpay donations.
+
+## Verified Answers (Quick Reference)
+
+- [Who is Riyajul Saha?](https://riyajulsaha.is-a.dev/#who-is-riyajul-saha): Riyajul Saha is a Computer Science student and software developer based in West Bengal, India, building practical digital products across web, mobile, and applied machine learning.
+- [What does Riyajul Saha build?](https://riyajulsaha.is-a.dev/#what-does-riyajul-saha-build): Full-stack web applications, cross-platform mobile apps, backend REST APIs, and applied AI/ML systems.
+- [Which technologies does Riyajul Saha use?](https://riyajulsaha.is-a.dev/#which-technologies-does-riyajul-saha-use): Python, JavaScript, Java, C, C++, React, React Native, Expo, Node.js, Flask, PostgreSQL, MySQL, Supabase, MongoDB, TensorFlow, and OpenCV.
+- [Is Riyajul Saha available for work?](https://riyajulsaha.is-a.dev/#is-riyajul-saha-available-for-freelance-or-contract-work): Yes, available for freelance development, technical consulting, and software engineering opportunities.
+- [How to contact Riyajul Saha?](https://riyajulsaha.is-a.dev/#how-can-you-contact-riyajul-saha): Email at riyajsaha879@gmail.com, GitHub at github.com/riyajul-saha, or LinkedIn at linkedin.com/in/riyajul-saha-linkdin.

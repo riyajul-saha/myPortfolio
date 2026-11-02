@@ -21,28 +21,6 @@ export function Skills() {
         subtitle="Technologies I use to design, build and deploy digital products."
       />
 
-      {/* Static HTML fallback for search engine crawlers and users without JavaScript */}
-      <noscript>
-        <div className="mt-8 space-y-6">
-          {skillCategories.map((c) => (
-            <div key={c.category} className="rounded-2xl border border-border bg-surface p-5">
-              <h3 className="text-base font-semibold text-foreground mb-3">{c.category}</h3>
-              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
-                {c.skills.map((s) => (
-                  <li
-                    key={s.name}
-                    className="rounded-xl border border-border bg-surface-2 p-2.5 text-xs text-muted-foreground"
-                  >
-                    <strong className="text-foreground block font-medium">{s.name}</strong>
-                    <span>{s.usedFor.join(" • ")}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </noscript>
-
       {/* Category filter tabs — scrollable on very narrow screens */}
       <Reveal className="mt-8 sm:mt-10">
         <div className="flex flex-wrap gap-2">
@@ -90,6 +68,52 @@ export function Skills() {
           </div>
         ))}
       </Reveal>
+
+      {/* Tech stack at a glance table */}
+      <div className="mt-10 overflow-x-auto rounded-2xl border border-border bg-surface/60 backdrop-blur-sm">
+        <table className="w-full text-left text-xs sm:text-sm">
+          <caption className="caption-top px-4 py-3 sm:px-6 sm:py-4 text-left font-semibold text-foreground border-b border-border text-sm sm:text-base">
+            Tech stack at a glance
+          </caption>
+          <thead>
+            <tr className="border-b border-border/80 bg-surface-2/40 text-foreground font-semibold">
+              <th scope="col" className="px-4 py-3 sm:px-6 sm:py-3.5 whitespace-nowrap">
+                Category
+              </th>
+              <th scope="col" className="px-4 py-3 sm:px-6 sm:py-3.5">
+                Technologies
+              </th>
+              <th scope="col" className="px-4 py-3 sm:px-6 sm:py-3.5">
+                Used for
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-border/50">
+            {skillCategories.map((c) => {
+              const techList = c.skills.map((s) => s.name).join(", ");
+              const usedForList = Array.from(new Set(c.skills.flatMap((s) => s.usedFor))).join(
+                ", ",
+              );
+              return (
+                <tr key={c.category} className="hover:bg-surface-2/30 transition-colors">
+                  <th
+                    scope="row"
+                    className="px-4 py-3 sm:px-6 sm:py-3.5 font-medium text-foreground whitespace-nowrap align-top"
+                  >
+                    {c.category}
+                  </th>
+                  <td className="px-4 py-3 sm:px-6 sm:py-3.5 text-foreground/90 align-top">
+                    {techList}
+                  </td>
+                  <td className="px-4 py-3 sm:px-6 sm:py-3.5 text-muted-foreground align-top">
+                    {usedForList}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 }

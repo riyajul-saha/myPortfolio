@@ -1,0 +1,275 @@
+SAGE SEO/AEO/GEO REPORT
+══════════════════════════════════════════════════
+URL: https://riyajulsaha.is-a.dev/
+Date: 11/1/2026, 5:03:16 PM
+Overall Score: 60/100
+══════════════════════════════════════════════════
+
+Structured Data & Schema - Score: 73/100
+----------------------------------------
+  ✓ JSON-LD blocks found: 1
+  ✓ Schema types: Person, WebSite, SoftwareApplication, CreativeWork, ProfessionalService
+  ✓ GEO-critical schema types present (3)
+    → Person, WebSite, SoftwareApplication
+  ⚠ Schema validation: 3 issue(s)
+    → Required properties are missing or values are invalid
+    Found:
+      • SoftwareApplication: missing offers
+      • SoftwareApplication: missing offers
+      • SoftwareApplication: missing offers
+  ⚠ Schema completeness: 4 recommendation(s)
+    → Several recommended properties are missing
+    Found:
+      • WebSite: consider adding potentialAction
+      • SoftwareApplication: consider adding aggregateRating, screenshot, featureList
+      • SoftwareApplication: consider adding aggregateRating, screenshot, featureList
+      • SoftwareApplication: consider adding aggregateRating, screenshot, featureList
+  ✓ Rich nested schema (depth: 4)
+    → Nested entities improve LLM understanding of relationships
+  ℹ No Speakable schema
+    → Consider adding speakable property for voice/LLM readiness
+  ✓ sameAs links found
+    → Helps LLMs disambiguate entities
+  ℹ RDFa markup detected
+    → JSON-LD is preferred for LLM consumption
+
+Semantic HTML - Score: 79/100
+----------------------------------------
+  ✓ Single H1 tag found
+    → "Hi, I'm Riyajul Saha — Software Engineer & Product BuilderI build modern web & m"
+  ✓ Heading hierarchy is logical (24 headings)
+    → No skipped levels detected
+  ✓ Rich semantic HTML (8 tag types)
+    → : 1, : 4, : 7, : 1, : 1, : 1, : 2, : 2
+  ✓ Single  element found
+    → Agents can identify primary content area
+  ℹ No  elements
+    → Use  for publish/update dates
+  ✕ Text-to-HTML ratio: 7%
+    → Very low - content may be JS-rendered or buried in markup
+  ⚠ Word count: 175 (thin content)
+    → Pages with fewer than 300 words may lack enough context for LLM answers
+  ℹ Reading level: complex (Flesch: 12)
+    → Very complex text - may be appropriate for expert audience but harder for LLMs to summarize
+
+Accessibility for Agents - Score: 82/100
+----------------------------------------
+  ✓ Language declared: "en"
+    → Agents know what language to expect
+  ⚠ No skip-to-content link
+    → Add a skip link at the top of the page for accessibility and agent navigation
+  ✓ All 6 images have alt attributes
+    → 6 descriptive, 0 decorative (empty alt)
+  ✓ Implicit landmarks via semantic HTML
+    → Semantic elements provide landmark equivalents
+  ✓ All links have descriptive text
+    → Agents can understand link purpose from anchor text
+  ⚠ 1 unlabeled form input(s)
+    → Add labels for agent-driven form interaction
+    Found:
+      • botcheck
+  ⚠ Keyboard accessibility issues: 1 element(s) with tabindex="-1"
+    → Ensure all interactive elements are keyboard-navigable for agents
+
+Internal Linking - Score: 66/100
+----------------------------------------
+  ⚠ Internal links: 8
+    → Consider adding more internal links for better discovery
+  ✓ Navigation elements: 1
+    → Agents can identify site navigation
+  ℹ No breadcrumb navigation detected
+    → Add breadcrumbs for hierarchical context (great for LLM citations)
+  ✓ In-page anchor links: 15
+    → Likely a table of contents - helps agents navigate sections
+  ℹ External links: 15
+    → External links to authoritative sources build credibility
+  ✓ Internal link anchor texts are descriptive
+    → Descriptive anchors help agents understand link context
+  ⚠ Partial site connectivity
+    → Nav links: yes, Footer links: no
+
+Meta & Discoverability - Score: 100/100
+----------------------------------------
+  ✓ Title tag: 33 chars
+    → "Riyajul Saha — Software Developer"
+  ✓ Meta description: 155 chars
+    → "Riyajul Saha is a software developer in West Bengal, India, building modern web ..."
+  ✓ Canonical URL set
+    → https://riyajulsaha.is-a.dev/
+  ✓ Open Graph tags: 10
+    → og:site_name, og:locale, og:title, og:description, og:type, og:url, og:image, og:image:width, og:image:height, og:image:alt
+  ✓ Twitter Card tags: 5
+  ℹ No hreflang tags
+    → Add if content is available in multiple languages/regions
+  ✓ Viewport meta tag set
+
+Machine Readability - Score: 85/100
+----------------------------------------
+  ✓ Substantial content in DOM (6292 chars)
+    → Content appears server-rendered or hydrated
+  ✓ Robots meta: indexable
+    → "index, follow, max-image-preview:large"
+  ✓ No AI bot restrictions in meta
+    → No specific bot blocking detected in page HTML
+  ℹ robots.txt check skipped
+    → Host permission not granted
+  ℹ X-Robots-Tag check skipped
+    → Host permission not granted
+  ℹ llms.txt check skipped
+    → Host permission not granted
+
+Entity & Authority - Score: 40/100
+----------------------------------------
+  ✓ Rich author information found
+    → Riyajul Saha - Schema with linked profiles (meta[name="author"], JSON-LD author, Person schema)
+    Found:
+      • Riyajul Saha
+  ⚠ No publication date detected
+    → LLMs prefer content with clear recency signals
+  ℹ No About/Contact page links detected
+    → Link to organizational info for E-E-A-T
+  ℹ No privacy/terms links detected
+
+Citability & Answer-Readiness - Score: 43/100
+----------------------------------------
+  ℹ No FAQ/Q&A patterns detected
+    → FAQ content is highly citable by LLMs - consider adding relevant Q&As
+  ℹ No definition lists
+    → Use  /  /  for term definitions - highly extractable
+  ℹ No data tables
+    → Tables with headers are excellent for structured data extraction
+  ✓ Content lists: 10
+    → Lists are easy for LLMs to cite and restructure
+  ✓ Lead paragraph is answer-sized
+    → 198 chars - ideal length for LLM extraction as a direct answer
+  ⚠ Only 7/24 headings have IDs
+    → Add IDs to all headings for deep linking and section references
+
+Performance & Crawlability - Score: 98/100
+----------------------------------------
+  ✓ All images have width/height attributes
+    → Prevents layout shift (CLS) during loading
+  ⚠ 1 image(s) without loading="lazy"
+    → Add loading="lazy" to below-the-fold images
+  ✓ All scripts use defer/async
+    → Non-blocking script loading
+  ℹ Could not verify font-display in external stylesheets
+    → Use font-display: swap in @font-face for faster text rendering
+  ✓ DOM size: 715 elements
+    → Reasonable DOM size for fast parsing
+  ✓ All images are under 200KB
+    → 7 image(s) checked via Resource Timing
+  ✓ Total image weight: 0.4MB
+    → 7 image(s) totaling under 1MB
+
+Agent Interactivity (WebMCP) - Score: 19/100
+----------------------------------------
+  ℹ No WebMCP declarative tools detected
+    → Add toolname, tooldescription, and toolparamdescription attributes to forms to enable AI agent interaction
+  ℹ No WebMCP imperative API usage detected
+    → Use navigator.modelContext.registerTool() for complex, multi-step tool workflows beyond simple form submissions
+  ℹ No WebMCP SDK/polyfill detected
+    → Consider @mcp-b/global polyfill or @mcp-b/react-webmcp for early WebMCP adoption
+  ⚠ 1 form(s) need improvements for WebMCP readiness
+    → Add name attributes, labels, and input types to make forms agent-friendly
+    Found:
+      • form #1: missing labels/aria-labels
+  ✓ Form IDs are stable (no dynamic/hashed patterns)
+    → Stable IDs help AI agents maintain state across interactions
+  ℹ Homepage: consider adding WebMCP tools
+    → Recommended tools for this page type: siteSearch, navigateToSection
+
+URL & Technical SEO - Score: 87/100
+----------------------------------------
+  ✓ URL slug is clean and well-structured
+    → Path: /
+  ✓ URL depth is 0 (ideal: 1-3)
+  ✓ No URL query parameters
+    → Clean URL without query strings
+  ✓ Viewport meta tag with width=device-width
+  ✓ 100% of images use modern formats (WebP/AVIF)
+    → 6/6 images
+  ℹ No  in HTML head
+    → Consider adding a sitemap link for discoverability
+
+Answer Targeting & Snippets - Score: 0/100
+----------------------------------------
+  ✕ Only 1 question-based heading(s)
+    → Use question-format headings (What is...?, How to...?) to target answer boxes
+  ✕ Few question headings followed by ideal-length paragraphs
+    → Follow question headings with 40-60 word paragraphs to target featured snippets
+  ✕ No direct definition patterns found
+    → Start paragraphs with patterns like "X is a...", "X refers to..." for answer engines
+  ℹ No "how to" headings with ordered lists detected
+    → Use  after "How to" headings to target step snippets
+  ℹ No comparison tables detected
+    → Add tables with 3+ columns and rows for table featured snippets
+  ℹ No PAA-style Q&A sequences detected
+    → Group related questions with concise answers to target People Also Ask boxes
+
+Voice & Conversational Readiness - Score: 12/100
+----------------------------------------
+  ✕ No speakable schema property found
+    → Add "speakable" to your JSON-LD to indicate voice-friendly content sections
+  ✕ Reading ease score: 14 (too complex for voice)
+    → Avg sentence: 10 words. Simplify language for voice assistants
+  ✕ Only 6% of paragraphs are voice-friendly length
+    → Most paragraphs are too long or too short for voice assistant delivery
+  ✕ No FAQPage schema detected
+    → Add FAQPage schema to enable voice assistant FAQ answers
+  ✕ Avg word complexity: 2.2 syllables/word (complex)
+    → Use shorter, simpler words for voice assistant readability
+
+Redirect & Protocol - Score: 100/100
+----------------------------------------
+  ✓ No redirects detected
+    → Page loaded without any redirects
+  ✓ No redirect latency
+    → Zero redirect overhead
+  ✓ Current URL matches canonical
+    → No canonical mismatch after redirects
+  ✓ Page served over HTTPS
+    → Secure connection confirmed
+
+Keyword Density - Score: 0/100
+----------------------------------------
+  ℹ Too little content for keyword analysis
+    → Only 47 words found - need at least 50
+
+AI VIEW
+----------------------------------------
+Score: 100/100
+Verdict: Strong machine understanding
+Topic: Hi, I'm Riyajul Saha — Software Engineer & Product BuilderI build modern web & mobile applications with clean UI and scalable systems.
+Summary: Riyajul Saha is a software developer in West Bengal, India, building modern web and mobile apps using React, React Native, Node.js, Python, and applied ML.
+First visible text: I design and ship end-to-end products — from interface and interaction to APIs, data and deployment. Currently focused on commerce platforms, cross-platform mobile apps and applied machine learning. Computer Science student & developer bridging intuitive user interfaces with robust backend architectures.
+
+What AI Sees First:
+  - Title: Riyajul Saha — Software Developer (good)
+  - Meta description: Riyajul Saha is a software developer in West Bengal, India, building modern web and mobile apps using React, React Native, Node.js, Python, and applied ML. (good)
+  - H1: Hi, I'm Riyajul Saha — Software Engineer & Product BuilderI build modern web & mobile applications with clean UI and scalable systems. (good)
+  - First useful text: I design and ship end-to-end products — from interface and interaction to APIs, data and deployment. Currently focused on commerce platforms, cross-platform mobile apps and applied machine learning. Computer Science student & developer bridging intuitive user interfaces with robust backend architectures. (good)
+  - Schema: Person, WebSite, SoftwareApplication (good)
+  - Top entities: ML, UI, AI, RS, ABOUT, ME (good)
+
+Score Breakdown:
+  - Identity: 100/100 - Title, description, canonical, and language signals.
+  - Structure: 100/100 - H1, heading outline, and clear section hierarchy.
+  - Schema: 100/100 - JSON-LD type coverage and useful schema fields.
+  - Content clarity: 100/100 - Visible text, concise summary, and entity clarity.
+  - Links, media & crawl: 100/100 - Readable links, image labels, and robots directives.
+
+Missing Signals:
+  - No missing AI View signals found.
+
+Identity:
+  Title: Riyajul Saha — Software Developer
+  Description: Riyajul Saha is a software developer in West Bengal, India, building modern web and mobile apps using React, React Native, Node.js, Python, and applied ML.
+  Canonical: https://riyajulsaha.is-a.dev/
+  Language: en
+  Page type: homepage
+  Entities: ML, UI, AI, RS, ABOUT, ME, REFERENCED, IN, MY, STORY, LLM, CORE
+  Words: 877; Links: 38; Images missing alt: 0
+
+
+Generated by SAGE - SEO, AEO & GEO Engine

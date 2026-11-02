@@ -60,7 +60,10 @@ export function ProjectDetailView({ project }: { project: Project }) {
         </nav>
       </header>
 
-      <main className="relative mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 space-y-12 sm:space-y-16">
+      <main
+        id="main-content"
+        className="relative mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 space-y-12 sm:space-y-16"
+      >
         {/* Section 1: Hero & Overview */}
         <section
           id="project-overview"

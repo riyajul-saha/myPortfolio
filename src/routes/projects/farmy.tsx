@@ -1,6 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getProjectBySlug } from "@/data/portfolio";
 import { ProjectDetailView } from "@/components/site/ProjectDetailView";
+import { getStandaloneProjectSchema, getBreadcrumbSchema, SEO_CONFIG } from "@/lib/seo";
 
 const project = getProjectBySlug("farmy")!;
 const title = "Farmy — Fruit E-Commerce Mobile Platform | Riyajul Saha";
@@ -9,21 +10,11 @@ const description =
 const url = "https://riyajulsaha.is-a.dev/projects/farmy";
 const image = "https://riyajulsaha.is-a.dev/assets/farmy-poster.webp";
 
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Farmy",
-  description: project.description,
-  url,
-  image,
-  applicationCategory: "ShoppingApplication",
-  operatingSystem: "Android, Web",
-  author: {
-    "@type": "Person",
-    name: "Riyajul Saha",
-    url: "https://riyajulsaha.is-a.dev/",
-  },
-};
+const schema = getStandaloneProjectSchema("farmy");
+const breadcrumb = getBreadcrumbSchema([
+  { name: "Portfolio", url: SEO_CONFIG.url },
+  { name: "Farmy", url },
+]);
 
 export const Route = createFileRoute("/projects/farmy")({
   head: () => ({
@@ -48,6 +39,10 @@ export const Route = createFileRoute("/projects/farmy")({
       {
         type: "application/ld+json",
         children: JSON.stringify(schema),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumb),
       },
     ],
   }),

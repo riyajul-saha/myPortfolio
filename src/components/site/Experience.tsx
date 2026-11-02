@@ -1,4 +1,5 @@
 import { timeline } from "@/data/portfolio";
+import { slugify } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
 
 export function Experience() {
@@ -32,7 +33,12 @@ export function Experience() {
             <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-primary">
               {item.period}
             </span>
-            <h3 className="mt-2 text-base sm:text-lg font-semibold">{item.title}</h3>
+            <h3
+              id={slugify(`experience-${item.title}-${item.org}`)}
+              className="mt-2 text-base sm:text-lg font-semibold"
+            >
+              {item.title}
+            </h3>
             <p className="text-xs sm:text-sm text-muted-foreground">{item.org}</p>
             <p className="mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed text-muted-foreground">
               {item.description}

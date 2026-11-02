@@ -10,9 +10,9 @@ const gramTarakkiImg = "/assets/GTFoundation-Banner.webp";
 export const profile = {
   name: "Riyajul Saha",
   initials: "RS.",
-  role: "Software Engineer & Product Builder",
+  role: "Software Developer",
   headline: "I build modern web & mobile applications with clean UI and scalable systems.",
-  bio: "I design and ship end-to-end products — from interface and interaction to APIs, data and deployment. Currently focused on commerce platforms, cross-platform mobile apps and applied machine learning.",
+  bio: "I design and ship end-to-end digital products. I build user interfaces, backend APIs, data models, and cloud deployments. My work centers on commerce platforms, mobile apps, and applied machine learning.",
   status: "Available for opportunities",
   email: "riyajsaha879@gmail.com",
   github: "https://github.com/riyajul-saha/",
@@ -39,9 +39,9 @@ export const aboutData = {
   tagline:
     "Computer Science student and software developer focused on building practical digital products.",
   paragraphs: [
-    "I'm Riyajul Saha, a Computer Science student and software developer focused on building practical digital products.",
-    "I work across web development, cross-platform mobile applications, backend systems, and applied machine learning. My projects include an e-commerce platform, an operations app, an AI-based crop disease detection system, and a website for a non-profit organization.",
-    "I enjoy taking ideas from concept to implementation, connecting interfaces with backend services, and improving products through hands-on development.",
+    "I'm Riyajul Saha, a Computer Science student and software developer. I build practical digital products for web and mobile.",
+    "I work across web development, mobile apps, backend systems, and applied machine learning. My projects include a fruit shopping app, an operations tool, an AI crop disease detector, and a non-profit website.",
+    "I take ideas from concept to final deployment. I connect clean user interfaces with dependable backend services. Hands-on development helps me improve every product I build.",
   ],
   domains: [
     {
@@ -488,3 +488,41 @@ export const projectFilters = ["All", "Web", "Mobile", "AI/ML", "Full Stack"] as
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug || p.id === slug);
 }
+
+export type HomepageFaq = {
+  question: string;
+  answer: string;
+};
+
+export const homepageFaqs: HomepageFaq[] = [
+  {
+    question: "Who is Riyajul Saha?",
+    answer:
+      "Riyajul Saha is a Computer Science student and software developer based in West Bengal, India. He builds practical, production-ready digital products spanning full-stack web applications, cross-platform mobile apps, backend systems, and applied machine learning, focusing on clean user interfaces connected to reliable backend services.",
+  },
+  {
+    question: "What does Riyajul Saha build?",
+    answer:
+      "Riyajul Saha is a developer who builds full-stack web applications, cross-platform mobile applications, backend APIs, and applied machine learning systems. His work ranges from fruit commerce platforms and operational portals to AI-driven crop disease diagnostics and non-profit community websites, managing products end-to-end from conception to production deployment.",
+  },
+  {
+    question: "Which technologies does Riyajul Saha use?",
+    answer:
+      "Riyajul Saha is a software developer proficient in Python, JavaScript, Java, C, and C++. His core development stack includes React, React Native, Expo, Node.js, Flask, PostgreSQL, MySQL, Supabase, and MongoDB, alongside applied machine learning libraries such as TensorFlow, OpenCV, Scikit-learn, Pandas, and NumPy for intelligent software solutions.",
+  },
+  {
+    question: "Which projects has Riyajul Saha built?",
+    answer:
+      "Riyajul Saha is the creator of several digital products: Farmy, a fruit e-commerce mobile platform; FarmyOS, a centralized administration and operations system; CropHeal AI, an intelligent crop disease diagnosis application powered by computer vision; and the official web platform for Gram Tarakki Foundation powering social initiatives.",
+  },
+  {
+    question: "Is Riyajul Saha available for freelance or contract work?",
+    answer:
+      "Riyajul Saha is currently available for freelance projects, technical consulting, and software development opportunities. He works with startups, businesses, and organizations worldwide to design and deliver custom web applications, cross-platform mobile apps, business automation tools, and machine learning integrations with direct communication and rapid delivery.",
+  },
+  {
+    question: "How can you contact Riyajul Saha?",
+    answer:
+      "Riyajul Saha is reachable by email at riyajsaha879@gmail.com for project inquiries, freelance contracts, or technical collaboration. You can also connect with him through his official GitHub profile at github.com/riyajul-saha or message him on LinkedIn to discuss software engineering opportunities and new product development.",
+  },
+];
